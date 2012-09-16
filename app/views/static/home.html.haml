@@ -1,0 +1,21 @@
+#myCarousel.carousel.slide.img-polaroid.img-rounded
+  .carousel-inner
+    .item.active
+      =image_tag 'slider/01.png'
+      /.carousel-caption
+      /%h4 First Thumbnail label
+      /%pCras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+    .item
+      =image_tag 'slider/02.png'
+      -#.carousel-caption
+        -#%h4 Second Thumbnail label
+        -#%pCras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+    .item
+      =image_tag 'slider/03.png'
+      -#.carousel-caption
+        -#%h4 Third Thumbnail label
+        -#%pCras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+  %a{:class => 'carousel-control left', :href=>"#myCarousel",  :'data-slide'=>"prev"}
+    &lsaquo;
+  %a{:class => 'carousel-control right', :href=>"#myCarousel", :'data-slide'=>"next"}
+    &rsaquo;

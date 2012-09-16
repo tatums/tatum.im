@@ -1,0 +1,17 @@
+!!! 5
+%html
+  =render :file => 'layouts/shared/head'
+%body
+  .container-fluid
+    .row-fluid.title
+      .span12
+        =render :file => 'layouts/shared/title'
+    .row-fluid.navigation
+      .span12
+        =render :file => 'layouts/shared/navigation'
+    .row-fluid.content
+      .span12
+        = yield
+    .row-fluid.footer
+      .span12
+        Footer

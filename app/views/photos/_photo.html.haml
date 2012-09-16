@@ -1,0 +1,12 @@
+%li.span4
+  = link_to image_tag(photo.image_url(:small), class: "img-polaroid img-rounded"), photo
+  .controls
+    = link_to 'Delete', photo, :data => {confirm: "Are you sure?"}, method: :delete, class: 'btn btn-sml photo-controls'
+    = link_to 'Comment', '#', class: 'btn btn-sml photo-controls comment-btn'
+    -if current_user
+      .comment
+        = form_for [photo, Comment.new] do |form|
+          = form.hidden_field :user_id, :value => current_user.id
+          = form.text_area :body, class: :user_comments, :rows => 4
+          = form.submit  class: 'btn btn-sml'
+

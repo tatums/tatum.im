@@ -1,0 +1,13 @@
+= form_for [@album,@photo], :html => {:multipart => true} do |f|
+  -if @photo.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@task.errors.count, "error") 
+        prohibited this task from being saved:
+      %ul
+        -@photo.errors.full_messages.each do |msg|
+          %li
+            = msg
+  = f.file_field :image
+  = f.submit
+

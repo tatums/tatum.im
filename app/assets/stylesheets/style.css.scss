@@ -1,0 +1,12 @@
+ul.nav a { 
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+ul.nav li a:hover {
+	background-image: image-url('bg_menuHover.png');
+	background-repeat: repeat-x;
+}

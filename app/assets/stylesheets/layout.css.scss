@@ -1,0 +1,29 @@
+#content{margin-top:50px;}
+
+.navbar-inner .container-fluid{border-top: 2px solid #53C6D4;}
+
+
+.nav li:first-child {
+	/*background-image: image-url("glyphicons-halflings.png");*/
+  
+background-image: image-url('menu_divider.png'), image-url('menu_divider.png');
+background-repeat: repeat-y, repeat-y;
+background-position: right, left;
+}
+
+.nav li {
+	position: relative;
+	display: inline;
+	float: left;
+	background-image: image-url('menu_divider.png');
+	background-repeat: repeat-y;
+	background-position: right;
+}
+.nav li:hover {
+	background-color:#53C6D4;
+}
+
+body, #header-wrapper {
+	background-color: #191C24;
+}
+

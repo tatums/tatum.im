@@ -1,0 +1,57 @@
+= form_for [@album, @photo], :html => { :multipart => true, :id => "fileupload"  } do |f|
+  / The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload
+  .row.fileupload-buttonbar
+    .span7
+      / The fileinput-button span is used to style the file input field as button
+      %span.btn.btn-success.fileinput-button
+        %i.icon-plus.icon-white
+        %span= t('fileupload.add_files')
+        = f.file_field :path
+      %button.btn.btn-primary.start{:type => "submit"}
+        %i.icon-upload.icon-white
+        %span= t('fileupload.start_upload')
+      %button.btn.btn-warning.cancel{:type => "reset"}
+        %i.icon-ban-circle.icon-white
+        %span= t('fileupload.cancel_upload')
+      %button.btn.btn-danger.delete{:type => "button"}
+        %i.icon-trash.icon-white
+        %span= t('fileupload.delete_multi')
+      %input.toggle{:type => "checkbox"}
+    .span5
+      / The global progress bar
+      .progress.progress-success.progress-striped.active.fade
+        .bar{:style => "width:0%;"}
+  / The loading indicator is shown during image processing
+  .fileupload-loading
+  %br
+    / The table listing the files available for upload/download
+    %table.table.table-striped
+      %tbody.files{"data-target" => "#modal-gallery", "data-toggle" => "modal-gallery"}
+
+
+
+
+:javascript
+  var fileUploadErrors = {
+    maxFileSize: 'File is too big',
+    minFileSize: 'File is too small',
+    acceptFileTypes: 'Filetype not allowed',
+    maxNumberOfFiles: 'Max number of files exceeded',
+    uploadedBytes: 'Uploaded bytes exceed file size',
+    emptyResult: 'Empty file upload result'
+  };
+
+  $(function () {
+
+      $('#fileupload').fileupload({
+
+          dataType: 'json',
+          url: '#{ album_photo_path(@album, @photo) }',
+          done: function (e, data) {
+              $.each(data.result, function (index, response) {
+                 $('<li><img src="'+response+'"></li>').appendTo('.additonal-images');
+              });
+
+          }
+      });
+  });

@@ -1,0 +1,41 @@
+.row-fluid
+  .span12
+    =link_to @photo.album.name, @photo.album
+
+.row-fluid
+  .span8
+    .thumbnail
+      = image_tag @photo.image_url(:large)
+  .span4
+    %ul.unstyled
+      -@photo.comments.each do |comment|
+        %li
+          = image_tag(comment.user.avatar, class: :thumbnail)
+          = link_to(content_tag(:span, comment.user.name, class: :label), comment.user)
+          = comment.body
+          %span.label
+            = time_ago_in_words(comment.created_at)
+
+    -if current_user
+      .commentt
+        = form_for [@photo, Comment.new] do |form|
+          = form.hidden_field :user_id, :value => current_user.id
+          = form.text_area :body, class: :user_comments, :rows => 4
+          = form.submit  class: 'btn btn-sml'
+
+.row-fluid
+  .span12
+    .modal.fade
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+        %h3#myModalLabel Modal header
+      .modal-body
+        = image_tag @photo.image_url(:large)
+      .modal-footer
+        %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Close
+    
+    %i.icon-search
+    %button.btn.btn-primary{"data-target" => ".modal", "data-toggle" => "modal", :type => "button"} 
+      Launch modal
+
+:javascript
