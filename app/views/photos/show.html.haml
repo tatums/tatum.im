@@ -10,12 +10,17 @@
     %ul.unstyled
       -@photo.comments.each do |comment|
         %li
-          = image_tag(comment.user.avatar, class: :thumbnail)
-          = link_to(content_tag(:span, comment.user.name, class: :label), comment.user)
-          = comment.body
-          %span.label
-            = time_ago_in_words(comment.created_at)
-
+          .row-fluid
+            .span2
+              = image_tag(comment.user.avatar, class: :thumbnail)
+            .span10
+              = link_to(content_tag(:span, comment.user.name, class: :label), comment.user)
+              %br/
+              = time_ago_in_words(comment.created_at)
+          .row-fluid
+            .span12
+              = comment.body
+             
     -if current_user
       .commentt
         = form_for [@photo, Comment.new] do |form|
@@ -33,7 +38,6 @@
         = image_tag @photo.image_url(:large)
       .modal-footer
         %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Close
-    
     %i.icon-search
     %button.btn.btn-primary{"data-target" => ".modal", "data-toggle" => "modal", :type => "button"} 
       Launch modal

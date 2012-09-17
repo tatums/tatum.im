@@ -9,9 +9,12 @@ AshlandstudiosCom::Application.routes.draw do
       resources :comments, shallow: true
     end
 
+    resources :photos, only: ['show'] do ##TODO Figure out a way to get rid of the show action -- not needed.
+      post 'set_cover', :on => :member
+    end
   end
-  resources :sessions, :only => ['create','destroy']
 
+  resources :sessions, :only => ['create','destroy']
   match 'portfolio' => 'static#portfolio'
   match "/auth/:provider/callback" => "sessions#create"
   match '/album/:album_id/photos' => 'photos#create', as: :uploader

@@ -3,6 +3,7 @@
   .controls
     = link_to 'Delete', photo, :data => {confirm: "Are you sure?"}, method: :delete, class: 'btn btn-sml photo-controls'
     = link_to 'Comment', '#', class: 'btn btn-sml photo-controls comment-btn'
+    = link_to 'Set as Cover', set_cover_album_photo_path(@album, photo), method: :post, class: 'btn btn-sml'
     -if current_user
       .comment
         = form_for [photo, Comment.new] do |form|

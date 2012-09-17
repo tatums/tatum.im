@@ -1,6 +1,6 @@
 require 'spec_helper.rb'
-
 describe "Album" do
+
   before do
     @album = Fabricate :album
   end
@@ -12,7 +12,7 @@ describe "Album" do
   it "Should have a user" do 
     @album.user.should_not eql nil
   end
-  
+
   it "Should have an owner" do 
     @album.owner.should_not eql nil
   end
@@ -21,4 +21,7 @@ describe "Album" do
     @album.photos.should be_a(Array)
   end
 
+  it "Should have a cover photo" do
+    @album.cover.should be_a(Photo)
+  end
 end

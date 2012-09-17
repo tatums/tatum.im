@@ -8,8 +8,12 @@ class Album < ActiveRecord::Base
   end
 
   def cover
-    unless photos.empty?
-      photos.first.image_url(:small)
-    end
+    Photo.find(cover_id).image_url(:small) if cover_id
   end
+
+  def set_cover(photo)
+    self.cover_id = photo.id
+    self.save
+  end
+
 end

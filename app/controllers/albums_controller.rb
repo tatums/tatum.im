@@ -61,4 +61,5 @@ class AlbumsController < ApplicationController
       format.html { redirect_to albums_url }
     end
   end
+
 end
