@@ -20,7 +20,7 @@
           .row-fluid
             .span12
               = comment.body
-             
+
     -if current_user
       .commentt
         = form_for [@photo, Comment.new] do |form|
