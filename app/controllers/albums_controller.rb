@@ -1,5 +1,5 @@
 class AlbumsController < ApplicationController
-  
+
   def index
     @albums = Album.all
 
@@ -31,7 +31,7 @@ class AlbumsController < ApplicationController
 
   def create
     @album = Album.new(params[:album])
-    @album.user_id = current_user.id
+    @album.user_id = current_user.id if current_user
     respond_to do |format|
       if @album.save
         format.html { redirect_to @album, notice: 'Album was successfully created.' }

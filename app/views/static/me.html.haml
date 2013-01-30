@@ -1,0 +1,5 @@
+%ul.unstyled.thumbnails
+  - @items.each do |item|
+    - item.attributes['object']['attachments'].each do |attachment|
+      %li.span4
+        = render attachment['objectType'],  attachment['objectType'].to_sym => attachment, :url => item.url

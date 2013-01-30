@@ -1,6 +1,9 @@
 %h1
+  =image_tag @user.avatar, class: "img-polaroid"
   =@user.name
-=image_tag @user.avatar, class: "img-polaroid"
+
+- if current_user == @user
+  = link_to 'Signout', logout_path, class: :btn
 
 %ul.thumbnails
   - @user.albums.each do |album|

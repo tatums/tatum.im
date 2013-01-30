@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  
+
   def index
     @photos = Photo.all
   end
@@ -7,7 +7,7 @@ class PhotosController < ApplicationController
   def show
     @photo = Photo.find(params[:id])
   end
-  
+
   def new
     @album = Album.find(params[:album_id])
     @photo = @album.photos.build
@@ -16,6 +16,8 @@ class PhotosController < ApplicationController
   def create
     @album = Album.find(params[:album_id])
     @photo = @album.photos.build(params[:photo])
+    @photo.user = current_user
+
     respond_to do |format|
       if @photo.save
         format.html { redirect_to @album, notice: 'Photo was successfully created.' }
@@ -49,5 +51,5 @@ class PhotosController < ApplicationController
     end
 
   end
-  
+
 end

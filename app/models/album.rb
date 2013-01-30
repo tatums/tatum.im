@@ -7,6 +7,10 @@ class Album < ActiveRecord::Base
     user.name if user
   end
 
+  def cover_photo
+    Photo.find(cover_id) if cover_id
+  end
+
   def cover
     Photo.find(cover_id).image_url(:small) if cover_id
   end

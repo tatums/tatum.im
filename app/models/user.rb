@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :provider, :uid
   has_many :albums, :dependent => :destroy
   has_many :comments, as: :commentable
+  has_many :photos, :dependent => :destroy
 
   def self.create_with_omniauth(auth)
     create! do |user|
@@ -10,12 +11,13 @@ class User < ActiveRecord::Base
       user.name = auth.info.name
       user.avatar = auth.info.image
       user.oauth_token = auth.credentials.token
-      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      user.oauth_expires_at = Time.now+15.days
+      #user.oauth_expires_at = Time.at(auth.credentials.expires_at)
     end
   end
-  
+
   def facebook
     @facebook ||= Koala::Facebook::API.new(oauth_token)
   end
-  
+
 end

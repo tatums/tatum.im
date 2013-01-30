@@ -22,6 +22,6 @@ describe "Album" do
   end
 
   it "Should have a cover photo" do
-    @album.cover.should be_a(Photo)
+    @album.cover_photo.should be_a(Photo)
   end
 end

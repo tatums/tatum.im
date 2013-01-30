@@ -1,4 +1,14 @@
 %ul.nav.pull-right
-  = nav_link 'Home', root_path
-  = nav_link 'Portfolio', portfolio_path
+  /= nav_link 'Home', root_path
+  /= nav_link 'Portfolio', portfolio_path
+  /= nav_link 'Social', me_path
+  /= nav_link 'Links', me_path
   = nav_link 'Photos', albums_path
+  - if current_user
+    = nav_link current_user.name, user_path(current_user)
+    /= nav_link 'Signout', logout_path
+  - else
+    = nav_link "Sign in with Twitter", "/auth/twitter"
+    = nav_link "Sign in with Facebook", "/auth/facebook"
+
+

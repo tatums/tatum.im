@@ -1,6 +1,15 @@
 #content{margin-top:50px;}
 
-.navbar-inner .container-fluid{border-top: 2px solid #53C6D4;}
+.navbar {border-top: 2px solid #53C6D4;}
+
+
+ul.nav li a { 
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
 
 
 .nav li:first-child {

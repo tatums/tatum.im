@@ -1,11 +1,11 @@
 AshlandstudiosCom::Application.routes.draw do
   resources :comments
 
-  root :to => 'static#home'
+  root :to => 'static#me'
 
   resources :users, :only => [:show]
   resources :albums do
-    resources :photos, shallow: true do 
+    resources :photos, shallow: true do
       resources :comments, shallow: true
     end
 
@@ -15,18 +15,20 @@ AshlandstudiosCom::Application.routes.draw do
   end
 
   resources :sessions, :only => ['create','destroy']
+
   match 'portfolio' => 'static#portfolio'
+  match 'me' => 'static#me'
   match "/auth/:provider/callback" => "sessions#create"
   match '/album/:album_id/photos' => 'photos#create', as: :uploader
   match 'logout' => 'sessions#destroy', :as => :logout
   match 'login' => 'sessions#destroy', :as => :login
 
 
-#  resources :galleries do 
+#  resources :galleries do
 #    resources :photos
 #  end
-  
-  
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -76,7 +78,7 @@ AshlandstudiosCom::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  
+
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
