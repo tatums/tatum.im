@@ -1,17 +1,16 @@
 .row-fluid
   .span12
     %p
-      =link_to "<i class='icon-arrow-left'></i>#{@photo.album.name}".html_safe, @photo.album, class: :btn
-      = link_to 'Delete Photo', @photo, :data => {confirm: "Are you sure?"}, method: :delete, class: 'btn btn-sml btn-danger'
+      = link_to content_tag(:i, nil, class: 'icon-arrow-left') + @photo.album.name, @photo.album, class: :btn
+      = link_to 'Delete Photo', @photo,
+            data: {confirm: "Are you sure?"},
+            method: :delete, class: 'btn btn-sml btn-danger' if @photo.belongs_to(current_user)
 
 .row-fluid
   .span7
     = image_tag @photo.image_url(:large), class: :thumbnail
     %p
-      = image_tag(@photo.user.avatar, class: :thumbnail)
-      = @photo.user.name
-    %p
-      = "Uploaded on: #{@photo.created_at.strftime('%m/%d/%Y')}"
+      = content_tag :small, "Uploaded on: #{@photo.created_at.strftime('%m/%d/%Y')} By: #{@photo.user.name}"
 
   .span5
     %ul.unstyled
@@ -19,24 +18,27 @@
         %li.spaced
           .row-fluid
 
-            .span1
+            .span2.comment-avatar
               = image_tag(comment.user.avatar, class: :thumbnail)
 
-            .span3
-              = link_to(content_tag(:span, comment.user.name, class: :label), comment.user)
-              %br/
-              = time_ago_in_words(comment.created_at)
-
-            .span7
+            .span10
+              = content_tag :small, link_to( content_tag(:span, comment.user.name), comment.user)
               = comment.body
+              %br
+              = content_tag :small, time_ago_in_words(comment.created_at)
 
-    -if current_user
-      .comments
-        = form_for [@photo, Comment.new] do |form|
-          = form.hidden_field :user_id, :value => current_user.id
-          %p
-            = form.text_area :body, class: 'user_comments boxsizingBorder', :rows => 4
-          %p
-            = form.submit  class: 'btn btn-sml'
+      -if current_user
+        %li.spaced
+          .row-fluid
+
+            .span2.comment-avatar
+              = image_tag current_user.avatar, class: :thumbnail
+            .span10
+              = form_for [@photo, Comment.new] do |form|
+                = form.hidden_field :user_id, :value => current_user.id
+                %p
+                  = form.text_area :body, class: 'user_comments boxsizingBorder', :rows => 4
+                %p
+                  = form.submit  class: 'btn btn-sml'
 
 

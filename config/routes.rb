@@ -1,7 +1,7 @@
 AshlandstudiosCom::Application.routes.draw do
   resources :comments
 
-  root :to => 'static#me'
+  root :to => 'albums#index'
 
   resources :users, :only => [:show]
   resources :albums do

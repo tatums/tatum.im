@@ -5,4 +5,8 @@ class Photo < ActiveRecord::Base
   belongs_to :album
   belongs_to :user
   has_many :comments, as: :commentable
+
+  def belongs_to(current_user)
+    true if user == current_user
+  end
 end
