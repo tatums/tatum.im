@@ -1,7 +1,8 @@
 AshlandstudiosCom::Application.routes.draw do
   resources :comments
 
-  root :to => 'albums#index'
+  root :to => 'static#root'
+
 
   resources :users, :only => [:show]
   resources :albums do
@@ -21,12 +22,8 @@ AshlandstudiosCom::Application.routes.draw do
   match "/auth/:provider/callback" => "sessions#create"
   match '/album/:album_id/photos' => 'photos#create', as: :uploader
   match 'logout' => 'sessions#destroy', :as => :logout
-  match 'login' => 'sessions#destroy', :as => :login
+  match 'login' => 'sessions#new', :as => :login
 
-
-#  resources :galleries do
-#    resources :photos
-#  end
 
 
   # The priority is based upon order of creation:

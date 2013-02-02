@@ -1,0 +1,13 @@
+
+%h1
+  Login
+  %small
+    Please authenticate yourself
+%p.small
+  %small Facebook and Twitter are used for authentication only.
+  %br
+  %small None of the information you share on this site is accessible to facebook or twitter.
+%ul.unstyled
+  %li
+    = link_to "Sign via Twitter", "/auth/twitter", class: :btn
+    = link_to "Sign via Facebook", "/auth/facebook", class: :btn

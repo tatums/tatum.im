@@ -1,4 +1,9 @@
 class StaticController < ApplicationController
+
+  def root
+    @photos = Photo.where(featured:true)
+  end
+
   def home
   end
 

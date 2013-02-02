@@ -1,3 +1,3 @@
-rvm use 1.9.3@ashlandstudios.com --create
+rvm use 1.9.3@tatum.im --create
 rvm current
 

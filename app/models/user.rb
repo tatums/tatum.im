@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :provider, :uid
+  attr_accessible :name, :provider, :uid, :site_owner
   has_many :albums, :dependent => :destroy
   has_many :comments, as: :commentable
   has_many :photos, :dependent => :destroy

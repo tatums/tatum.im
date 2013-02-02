@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130130034248) do
+ActiveRecord::Schema.define(:version => 20130202220231) do
 
   create_table "albums", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20130130034248) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "cover_id"
+    t.boolean  "hidden"
   end
 
   create_table "comments", :force => true do |t|
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20130130034248) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
+    t.boolean  "featured"
   end
 
   create_table "users", :force => true do |t|
@@ -54,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20130130034248) do
     t.string   "avatar"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
+    t.boolean  "site_owner"
   end
 
 end

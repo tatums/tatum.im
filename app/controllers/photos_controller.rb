@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+  before_filter :require_user
 
   def index
     @photos = Photo.all

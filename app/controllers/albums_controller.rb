@@ -1,4 +1,5 @@
 class AlbumsController < ApplicationController
+  before_filter :require_user
 
   def index
     @albums = Album.all
