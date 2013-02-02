@@ -5,5 +5,5 @@
       %h3
         = album.name
 
-= link_to '<i class="icon-plus"> </i> New Album'.html_safe, new_album_path, class: :btn
+= link_to '<i class="icon-plus"> </i> New Album'.html_safe, new_album_path, class: :btn if current_user
 
