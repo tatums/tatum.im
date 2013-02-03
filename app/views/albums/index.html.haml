@@ -1,10 +1,11 @@
-%ul.thumbnails
-  - @albums.each do |album|
-    %li
+.row-fluid
+  .thumbnails
+    - @albums.each do |album|
       = image_or_placeholder(album)
-      /= link_to image_tag(album.cover, class: "img-polaroid img-rounded"), album if album.cover
-      %h3
-        = album.name
+      = link_to album.name, album
 
-= link_to '<i class="icon-plus"> </i> New Album'.html_safe, new_album_path, class: :btn if current_user
+
+.row-fluid
+  .span12
+    = link_to '<i class="icon-plus"> </i> New Album'.html_safe, new_album_path, class: :btn if current_user
 
