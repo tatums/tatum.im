@@ -1,10 +1,14 @@
 .row-fluid
   .span12
-    %p
-      = link_to content_tag(:i, nil, class: 'icon-arrow-left') + @photo.album.name, @photo.album, class: :btn
-      = link_to 'Delete Photo', @photo,
-            data: {confirm: "Are you sure?"},
-            method: :delete, class: 'btn btn-sml btn-danger' if @photo.belongs_to(current_user)
+    %ul.breadcrumb
+      %li
+        = link_to 'Home', root_path
+        = content_tag :span, '/', class: :divider
+      %li
+        = link_to 'Albums', albums_path
+        = content_tag :span, '/', class: :divider
+      %li
+        = link_to @photo.album.name, album_path(@photo.album)
 
 .row-fluid
   .span7
@@ -41,4 +45,11 @@
                 %p
                   = form.submit  class: 'btn btn-sml'
 
+.row-fluid
+  .span12
+    %p
+      //= link_to content_tag(:i, nil, class: 'icon-arrow-left') + @photo.album.name, @photo.album, class: :btn
+      = link_to 'Delete Photo', @photo,
+            data: {confirm: "Are you sure?"},
+            method: :delete, class: 'btn btn-sml btn-danger' if @photo.belongs_to(current_user)
 

@@ -9,9 +9,5 @@
         =render :file => 'layouts/shared/navigation'
 
   #content.container-fluid
-    .row-fluid
-      .span12
-        =render :file => 'layouts/shared/notifications'
-        = yield
-    .row-fluid
-      .span12
+    =render :file => 'layouts/shared/notifications'
+    = yield
