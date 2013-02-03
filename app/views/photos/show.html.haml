@@ -2,13 +2,13 @@
   .span12
     %ul.breadcrumb
       %li
-        = link_to 'Home', root_path
-        = content_tag :span, '/', class: :divider
-      %li
         = link_to 'Albums', albums_path
         = content_tag :span, '/', class: :divider
       %li
         = link_to @photo.album.name, album_path(@photo.album)
+        = content_tag :span, '/', class: :divider
+      %li.active
+        = @photo.title
 
 .row-fluid
   .span7

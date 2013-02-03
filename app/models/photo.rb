@@ -1,11 +1,12 @@
 class Photo < ActiveRecord::Base
-  attr_accessible :album_id, :image, :user_id
+  attr_accessible :album_id, :image, :user_id, :title
   mount_uploader :image, ImageUploader
 
   belongs_to :album
   belongs_to :user
-  has_many :comments, as: :commentable
+  has_many :comments, as: :commentable, :dependent => :destroy
 
+  before_create :default_name
   after_save :default_cover
   after_destroy :unset_if_cover
 
@@ -27,4 +28,9 @@ class Photo < ActiveRecord::Base
   def belongs_to(current_user)
     true if user == current_user
   end
+
+  def default_name
+    self.title ||= File.basename(image.filename, '.*').titleize if image
+  end
+
 end

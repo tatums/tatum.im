@@ -15,17 +15,14 @@ class PhotosController < ApplicationController
   end
 
   def create
+
     @album = Album.find(params[:album_id])
     @photo = @album.photos.build(params[:photo])
     @photo.user = current_user
     respond_to do |format|
       if @photo.save
         format.html { redirect_to @album, notice: 'Photo was successfully created.' }
-        #format.json { render :json => { :image_url => @photo.image_url(:small) }, :content_type => 'text/html'}
-
-        #format.json { render :json => {:partial => render_to_string(:partial => "photos/photo", :object => @photo) } }
-        format.json { render :json => { :partial => "photos/photo.json", :object => @photo } }
-
+        format.js
       else
         format.html { render action: "new" }
       end

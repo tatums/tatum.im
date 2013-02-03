@@ -13,8 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap/bootstrap.min.js
-//= require jquery.fileupload/vendor/jquery.ui.widget
-//= require jquery.fileupload/jquery.iframe-transport
-//= require jquery.fileupload/jquery.fileupload
+//= require jquery-fileupload/basic
+//= require jquery-fileupload/vendor/tmpl
 //= require_tree .
 
