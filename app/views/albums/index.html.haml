@@ -1,8 +1,19 @@
-.row-fluid
-  .thumbnails
-    - @albums.each do |album|
-      = image_or_placeholder(album)
-      = link_to album.name, album
+%ul.thumbnails
+  -@albums.each_slice(3) do |album_set|
+    .row-fluid.image_set
+      -album_set.each do |album|
+        .span4
+          = image_or_placeholder(album)
+
+
+/ - @albums.each do |album|
+/   .row-fluid
+/     .span12
+/       .well
+/         %h2
+/           = link_to album.name, album
+/         = image_or_placeholder(album)
+
 
 
 .row-fluid

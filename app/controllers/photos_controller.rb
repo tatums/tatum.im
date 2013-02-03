@@ -18,7 +18,6 @@ class PhotosController < ApplicationController
     @album = Album.find(params[:album_id])
     @photo = @album.photos.build(params[:photo])
     @photo.user = current_user
-
     respond_to do |format|
       if @photo.save
         format.html { redirect_to @album, notice: 'Photo was successfully created.' }
