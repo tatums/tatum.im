@@ -14,4 +14,17 @@ $(document).ready(function() {
     $('#photo_image').click();
   });
 
+
+
+  function setMouseOver(){
+
+    $('.controls a').hide()
+    $(".thumbnails li").mouseover(function() {
+      $(this).find('.controls a').show();
+    }).mouseout(function(){
+      $(this).find('.controls a').hide();
+    });
+  }
+
+
 })

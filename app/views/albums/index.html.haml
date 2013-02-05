@@ -11,6 +11,7 @@
         .row-fluid.image_set
           -album_set.each do |album|
             .span4
+              = content_tag :h2, (content_tag :small, link_to(album.name, album))
               = image_or_placeholder(album)
 
 .row-fluid

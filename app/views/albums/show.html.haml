@@ -7,15 +7,15 @@
       %li.active
         = @album.name
 
-.page-header
-  %h1
-    =image_tag @album.user.avatar, class: "img-polaroid"
-    = @album.name
-
 .row-fluid
   .span12
 
-    %ul.thumbnails
+    .page-header
+      %h1
+        =image_tag @album.user.avatar, class: "img-polaroid"
+        = @album.name
+
+    %ul#sortable.thumbnails
       -@photos.each_slice(3) do |photo_set|
         .row-fluid.image_set
           -photo_set.each do |photo|
@@ -42,5 +42,19 @@
     = link_to 'Delete Album', @album, :confirm => 'Are you sure?', :method => :delete, class: 'btn btn-danger'
     = link_to 'Edit', edit_album_path(@album), class: :btn
     = link_to content_tag(:i, nil, class: 'icon-plus')+'Add Photos', '#', id: 'upload-btn', class: 'btn'
+
+:javascript
+
+  function setMouseOver(){
+
+    $('.controls a').hide()
+    $(".thumbnails li").mouseover(function() {
+      $(this).find('.controls a').show();
+    }).mouseout(function(){
+      $(this).find('.controls a').hide();
+    });
+  }
+
+  setMouseOver();
 
 

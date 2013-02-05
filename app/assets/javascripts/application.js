@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require bootstrap/bootstrap.min.js
 //= require jquery-fileupload/basic
-//= require jquery-fileupload/vendor/tmpl
 //= require_tree .
 
