@@ -15,7 +15,6 @@ class PhotosController < ApplicationController
   end
 
   def create
-
     @album = Album.find(params[:album_id])
     @photo = @album.photos.build(params[:photo])
     @photo.user = current_user
@@ -50,7 +49,6 @@ class PhotosController < ApplicationController
     respond_to do |format|
       format.html { redirect_to @album, notice: 'Photo cover was successfully saved.'  }
     end
-
   end
 
 end

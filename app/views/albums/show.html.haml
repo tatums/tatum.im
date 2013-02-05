@@ -31,19 +31,16 @@
 .row-fluid
   .span12
     = form_for [@album, Photo.new] do |f|
-      = f.label :image, "Upload image:"
-      = f.file_field :image, multiple: true, name: "photo[image]", class: 'prettyFile'
+      = f.file_field :image, multiple: true, name: "photo[image]"
+
+.row-fluid
+  .span3
+    #target
 
 .row-fluid
   .span12
     = link_to 'Delete Album', @album, :confirm => 'Are you sure?', :method => :delete, class: 'btn btn-danger'
     = link_to 'Edit', edit_album_path(@album), class: :btn
-
-
-%script#template-upload{:type => "text/x-tmpl"}
-  .upload
-    {%=o.name%}
-    .progress
-      .bar{:style => "width: 0%;"}
+    = link_to content_tag(:i, nil, class: 'icon-plus')+'Add Photos', '#', id: 'upload-btn', class: 'btn'
 
 

@@ -1,9 +1,9 @@
-#content{margin-top:50px;}
+#content{margin: 4em 0;}
 
 .navbar {border-top: 2px solid #53C6D4;}
 
 
-ul.nav li a { 
+ul.nav li a {
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
@@ -14,7 +14,7 @@ ul.nav li a {
 
 .nav li:first-child {
 	/*background-image: image-url("glyphicons-halflings.png");*/
-  
+
 background-image: image-url('menu_divider.png'), image-url('menu_divider.png');
 background-repeat: repeat-y, repeat-y;
 background-position: right, left;
