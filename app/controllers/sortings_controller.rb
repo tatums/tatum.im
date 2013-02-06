@@ -1,3 +1,0 @@
-class SortingsController < ApplicationController
-
-end
