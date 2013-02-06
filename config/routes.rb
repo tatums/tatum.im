@@ -6,19 +6,24 @@ AshlandstudiosCom::Application.routes.draw do
 
   resources :users, :only => [:show]
   resources :albums do
+
     resources :photos, shallow: true do
       resources :comments, shallow: true
-    end
-
-    resources :photos, only: ['show'] do ##TODO Figure out a way to get rid of the show action -- not needed.
       post 'set_cover', :on => :member
     end
+
+    resources :photos, only: ['show'] do
+      post 'set_cover', :on => :member
+    end
+
+    collection do
+      post 'sort'
+    end
+
   end
 
   resources :sessions, :only => ['create','destroy']
 
-  match 'portfolio' => 'static#portfolio'
-  match 'me' => 'static#me'
   match "/auth/:provider/callback" => "sessions#create"
   match '/album/:album_id/photos' => 'photos#create', as: :uploader
   match 'logout' => 'sessions#destroy', :as => :logout

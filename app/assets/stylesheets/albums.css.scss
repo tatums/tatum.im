@@ -1,11 +1,10 @@
-// Place all the styles related to the albums controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.controls{ min-height:40px; }
+.comment-avatar{ padding:0 .5em; }
 
-.controls{
-  min-height:40px;
-}
+#sortable li{ height:300px; }
+#sortable li img{ max-height:250px; }
 
-.comment-avatar{
-  padding:0 .5em;
+#sortable h2 {
+  line-height:0;
+  margin:5px
 }

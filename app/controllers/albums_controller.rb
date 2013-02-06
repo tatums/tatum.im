@@ -2,7 +2,7 @@ class AlbumsController < ApplicationController
   before_filter :require_user
 
   def index
-    @albums = Album.all
+    @albums = Album.order(:position)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -62,5 +62,14 @@ class AlbumsController < ApplicationController
       format.html { redirect_to albums_url }
     end
   end
+
+
+  def sort
+    params[:AlbumsOrder].each_with_index do |id, index|
+      Album.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
+    end
+    render :nothing => true
+  end
+
 
 end

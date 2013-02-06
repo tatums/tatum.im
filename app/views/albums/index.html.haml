@@ -6,14 +6,21 @@
 .row-fluid
   .span12
 
-    %ul.thumbnails
-      -@albums.each_slice(3) do |album_set|
-        .row-fluid.image_set
-          -album_set.each do |album|
-            .span4
-              = content_tag :h2, (content_tag :small, link_to(album.name, album))
-              = image_or_placeholder(album)
+    %ul#sortable.thumbnails
+      -@albums.each do |album|
+        = render album
 
 .row-fluid
   .span12
-    = link_to '<i class="icon-plus"> </i> New Album'.html_safe, new_album_path, class: :btn if current_user
+    = link_to content_tag(:i, nil, class: 'icon-plus') +'New Album', new_album_path, class: :btn
+
+:javascript
+  $(document).ready(function(){
+    $("#sortable").disableSelection();
+    $("#sortable").sortable({
+      update: function(event, ui) {
+        var AlbumsOrder = $(this).sortable('toArray');
+        $.post( 'albums/sort', {AlbumsOrder:AlbumsOrder});
+      }
+    });
+  });
