@@ -16,10 +16,8 @@
         = @album.name
 
     %ul#sortable.thumbnails
-      -@photos.each_slice(3) do |photo_set|
-        .row-fluid.image_set
-          -photo_set.each do |photo|
-            = render photo
+      -@photos.each do |photo|
+        = render photo
 
     -if @photos.empty?
       .alert.alert-block

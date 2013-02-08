@@ -9,16 +9,17 @@
       = link_to content_tag(:i, nil, class: 'icon-plus') +'New Album', new_album_path, class: :btn
 
   .span3
-    = content_tag :h5, content_tag(:i, nil, class: 'icon-th-list') + 'Activity Feed'
-    %ul.unstyled
-      - @activities.each do |activity|
-        = content_tag :li do
-          = link_to activity.activityable.user.name, activity.activityable.user
-          = activity.body
-          = link_to activity.object_name, activity.activityable
+    .activity-feed
+      = content_tag :h5, content_tag(:i, nil, class: 'icon-th-list') + 'Activity Feed'
+      %ul.unstyled
+        - @activities.each do |activity|
+          = content_tag :li do
+            = link_to activity.activityable.user.name, activity.activityable.user
+            = activity.body
+            = link_to activity.object_name, activity.activityable
 
-          %i
-            = content_tag :small, time_ago_in_words(activity.created_at)
+            %i
+              = content_tag :small, time_ago_in_words(activity.created_at)
 
 :javascript
   $(document).ready(function(){
