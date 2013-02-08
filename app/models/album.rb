@@ -2,8 +2,9 @@ class Album < ActiveRecord::Base
   attr_accessible :name, :user_id, :position
   has_many :photos, :dependent => :destroy
   belongs_to :user
+  has_many :activities, as: :activityable, :dependent => :destroy
 
-  after_create :set_init_position
+  after_create :set_init_position, :log_activity
 
   def owner
     user.name if user
@@ -22,7 +23,12 @@ class Album < ActiveRecord::Base
     self.save
   end
 
+
   private
+
+  def log_activity
+    Activity.log(self)
+  end
 
   def set_init_position
     update_attributes(:position => 1)

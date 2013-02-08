@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :albums, :dependent => :destroy
   has_many :comments, as: :commentable
   has_many :photos, :dependent => :destroy
+  has_many :activities
 
   def self.create_with_omniauth(auth)
     create! do |user|

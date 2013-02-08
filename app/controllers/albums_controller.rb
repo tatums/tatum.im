@@ -3,6 +3,7 @@ class AlbumsController < ApplicationController
 
   def index
     @albums = Album.order(:position)
+    @activities = Activity.order('created_at DESC').take(15)
 
     respond_to do |format|
       format.html # index.html.erb

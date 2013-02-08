@@ -4,10 +4,12 @@ class Photo < ActiveRecord::Base
 
   belongs_to :album
   belongs_to :user
+  has_many :activities, as: :activityable, :dependent => :destroy
   has_many :comments, as: :commentable, :dependent => :destroy
 
   before_create :default_name
   after_save :default_cover
+  after_create :log_activity
   after_destroy :unset_if_cover
 
   def default_cover
@@ -31,6 +33,10 @@ class Photo < ActiveRecord::Base
 
   def default_name
     self.title ||= File.basename(image.filename, '.*').titleize if image
+  end
+
+  def log_activity
+    Activity.log(self)
   end
 
 end
