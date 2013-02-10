@@ -5,10 +5,11 @@
 - if current_user == @user
   = link_to 'Signout', logout_path, class: :btn
 
+%h4 Albums
 %ul.thumbnails
   - @user.albums.each do |album|
     %li
       - if album.cover
-        = link_to image_tag(album.cover, class: "img-polaroid img-rounded"), album
+        = link_to image_tag(album.cover.image_url(:cover), class: "img-polaroid img-rounded"), album
       %br
-      = link_to album.name, album
+      = content_tag :h4, link_to(album.name, album)

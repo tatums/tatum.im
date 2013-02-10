@@ -1,3 +1,3 @@
-= content_tag :li, id: album.id do
+= content_tag :li, id: album.id, class: 'img-polaroid img-rounded' do
   = image_or_placeholder(album)
-  = content_tag :h2, (content_tag :small, link_to(album.name, album), class: 'album-heading')
+  = content_tag :h2, (content_tag :small, link_to(album.name, album), class: 'album-heading'), class: 'album-heading-tag'
