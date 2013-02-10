@@ -1,19 +1,23 @@
 AshlandstudiosCom::Application.routes.draw do
-  resources :comments
+
 
   root :to => 'static#root'
-
+  resources :comments
 
   resources :users, :only => [:show]
   resources :albums do
 
     resources :photos, shallow: true do
       resources :comments, shallow: true
-      post 'set_cover', :on => :member
+      # post 'set_cover', :on => :member
     end
 
     resources :photos, only: ['show'] do
       post 'set_cover', :on => :member
+    end
+
+    member do
+      post 'sort_photos'
     end
 
     collection do

@@ -12,7 +12,7 @@ class AlbumsController < ApplicationController
 
   def show
     @album = Album.find(params[:id])
-    @photos = @album.photos
+    @photos = @album.photos.order(:position)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -72,5 +72,11 @@ class AlbumsController < ApplicationController
     render :nothing => true
   end
 
+  def sort_photos
+    params[:PhotosOrder].each_with_index do |id, index|
+      Photo.where(:id => id.scan(/\d+/)).update_all(:position => index+1)
+    end
+    render :nothing => true
+  end
 
 end

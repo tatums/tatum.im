@@ -56,3 +56,13 @@
   setMouseOver();
 
 
+  $(document).ready(function(){
+    $("#sortable").disableSelection();
+    $("#sortable").sortable({
+      update: function(event, ui) {
+        var PhotosOrder = $(this).sortable('toArray');
+        $.post( " #{sort_photos_album_path(@album) }" , {PhotosOrder:PhotosOrder});
+      }
+    });
+  });
+

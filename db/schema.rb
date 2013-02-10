@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130210031450) do
+ActiveRecord::Schema.define(:version => 20130210032349) do
 
   create_table "activities", :force => true do |t|
     t.text     "body"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20130210031450) do
     t.integer  "user_id"
     t.boolean  "featured"
     t.string   "title"
+    t.integer  "position"
   end
 
   create_table "users", :force => true do |t|

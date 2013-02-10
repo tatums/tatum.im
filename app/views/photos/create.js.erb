@@ -1,15 +1,5 @@
-var size = $('.image_set:last').children("li").size()
-
 <% if @photo.new_record? %>
   alert("Failed to upload: <%= j @photo.errors.full_messages.join(', ').html_safe %>");
 <% else %>
-
-  if ( size == 0 || size == 3 )
-    {
-      $('.thumbnails').append("<div class='row-fluid image_set'></div>")
-      $('.image_set:last').append("<%= j render(@photo) %>"); }
-  else
-    { $('.image_set:last').append("<%= j render(@photo) %>"); }
-
+  $('ul.thumbnails').append("<%= j render(@photo) %>");
 <% end %>
-
