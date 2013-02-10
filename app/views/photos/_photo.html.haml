@@ -1,5 +1,5 @@
 %li
-  = link_to image_tag(photo.image_url(:small), class: "img-polaroid img-rounded"), photo
+  = link_to image_tag(photo.image_url(:cover), class: "img-polaroid img-rounded"), photo
   .controls
     = link_to 'Set as Cover', set_cover_album_photo_path(@album, photo), method: :post, class: 'btn btn-sml'
 
