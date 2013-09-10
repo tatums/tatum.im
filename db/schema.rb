@@ -41,13 +41,6 @@ ActiveRecord::Schema.define(:version => 20130210032349) do
     t.datetime "updated_at",       :null => false
   end
 
-  create_table "galleries", :force => true do |t|
-    t.string   "name"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "photos", :force => true do |t|
     t.string   "image"
     t.integer  "album_id"
