@@ -9,5 +9,16 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
  */
+
+ @import "bourbon";
+ @import "colors";
+ @import "albums";
+ @import "comments";
+ @import "layout";
+ @import "photos";
+ @import "scaffolds";
+ @import "static";
+ @import "users";
+ @import "bootstrap/bootstrap-responsive";
+ @import "bootstrap/bootstrap";

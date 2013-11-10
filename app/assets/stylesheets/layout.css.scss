@@ -1,6 +1,6 @@
 #content{margin: 4em 0;}
 
-.navbar {border-top: 2px solid #53C6D4;}
+.navbar {border-top: 2px solid $top-color;}
 
 
 ul.nav li a {
@@ -13,11 +13,9 @@ ul.nav li a {
 
 
 .nav li:first-child {
-	/*background-image: image-url("glyphicons-halflings.png");*/
-
-background-image: image-url('menu_divider.png'), image-url('menu_divider.png');
-background-repeat: repeat-y, repeat-y;
-background-position: right, left;
+  background-image: image-url('menu_divider.png'), image-url('menu_divider.png');
+  background-repeat: repeat-y, repeat-y;
+  background-position: right, left;
 }
 
 .nav li {
@@ -29,7 +27,7 @@ background-position: right, left;
 	background-position: right;
 }
 .nav li:hover {
-	background-color:#53C6D4;
+  @include background(linear-gradient($start-color, $end-color) left repeat);
 }
 
 body, #header-wrapper {

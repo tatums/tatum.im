@@ -4709,13 +4709,16 @@ input[type="submit"].btn.btn-mini {
           border-radius: 6px 0 6px 6px;
 }
 
+
+$begin-color: #36373C;
+$end-color: #2A2A2D;
 .navbar-inverse .navbar-inner {
   background-color: #1b1b1b;
-  background-image: -moz-linear-gradient(top, #222222, #111111);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
-  background-image: -webkit-linear-gradient(top, #222222, #111111);
-  background-image: -o-linear-gradient(top, #222222, #111111);
-  background-image: linear-gradient(to bottom, #222222, #111111);
+  background-image: -moz-linear-gradient(top, $begin-color, $end-color);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($begin-color), to($end-color));
+  background-image: -webkit-linear-gradient(top, $begin-color, $end-color);
+  background-image: -o-linear-gradient(top, $begin-color, $end-color);
+  background-image: linear-gradient(to bottom, $begin-color, $end-color);
   background-repeat: repeat-x;
   border-color: #252525;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
