@@ -1,0 +1,1 @@
+$items = Blog.new.items

@@ -1,12 +1,64 @@
-ul.nav a { 
-	-webkit-transition: all 0.3s ease;
-	-moz-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;
-	-ms-transition: all 0.3s ease;
-	transition: all 0.3s ease;
+// gray
+$primary1: #302E36;
+$secondary1: #29282E;
+
+// teal
+$primary2: #00BFC2;
+$secondary2: #056874;
+
+// red
+$primary3: #E50909;
+$secondary3: #C20909;
+
+.main-wrapper a {
+  color: $primary2;
 }
 
-ul.nav li a:hover {
-	background-image: image-url('bg_menuHover.png');
-	background-repeat: repeat-x;
+.main-wrapper a:hover {
+  color: $secondary2;
+}
+
+.main-heading{
+  @include radial-gradient($secondary1, $primary1);
+  @include box-shadow(0 0 3px 2px hsla(0, 0%, 0%, 0.35));
+
+  border-right: 3px solid $secondary3;
+  text-align:right;
+  padding: 1em 1em;
+  position:fixed;
+  top:0;
+  bottom:0;
+}
+
+.photo{
+  @include border-top-radius(5px);
+  @include border-bottom-radius(5px);
+  @include border-left-radius(5px);
+  @include border-right-radius(5px);
+}
+
+.shadow{
+  @include box-shadow(0 0 3px 2px hsla(0, 0%, 0%, 0.35));
+}
+
+h1.brand{
+  color:white;
+  padding-bottom:0;
+  margin-bottom:0;
+}
+
+p.brand_subtag {
+  padding:0;
+  margin:0;
+  color:gray;
+  font-size: 0.8em;
+}
+
+.main-content{
+  padding-right:1em;
+}
+
+.highlight pre{
+  margin-top:0;
+  padding-top:0;
 }

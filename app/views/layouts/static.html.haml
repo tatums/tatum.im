@@ -1,0 +1,38 @@
+!!! 5
+%html
+  =render :file => 'layouts/shared/head'
+%body
+  .main-wrapper
+    .main-heading
+      =image_tag 'jules_verne3.jpeg', class: 'photo shadow'
+      %h1.brand tatum.im
+      %p.brand_subtag Just another enginer
+      %p
+        =link_to 'https://github.com/tatums' do
+          =fa_icon "github-square 2x"
+          github
+        =link_to 'http://tatums.github.io' do
+          =fa_icon "bookmark 2x"
+          blog
+      - if current_user
+        %p
+          =link_to albums_path, class: nav_class(albums_path) do
+            =fa_icon "picture-o 2x"
+            Photo Albums
+        %p
+          =link_to user_path(current_user), class: nav_class(user_path(current_user)) do
+            =fa_icon "user 2x"
+            =current_user.name
+      - else
+        = nav_link "Sign-in", login_path
+
+    .notifications
+      =render :file => 'layouts/shared/notifications'
+
+    .main-content
+      /%h1.brand tatum.im
+      /%p.brand_subtag Just another enginer
+      -$items.each do |item|
+        %h2
+          =link_to item.title, item.link
+        =item.content.html_safe

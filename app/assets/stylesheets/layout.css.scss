@@ -1,36 +1,10 @@
-#content{margin: 4em 0;}
 
-.navbar {border-top: 2px solid $top-color;}
-
-
-ul.nav li a {
-	-webkit-transition: all 0.3s ease;
-	-moz-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;
-	-ms-transition: all 0.3s ease;
-	transition: all 0.3s ease;
+.main-heading{
+  @include span-columns(3);
 }
 
-
-.nav li:first-child {
-  background-image: image-url('menu_divider.png'), image-url('menu_divider.png');
-  background-repeat: repeat-y, repeat-y;
-  background-position: right, left;
-}
-
-.nav li {
-	position: relative;
-	display: inline;
-	float: left;
-	background-image: image-url('menu_divider.png');
-	background-repeat: repeat-y;
-	background-position: right;
-}
-.nav li:hover {
-  @include background(linear-gradient($start-color, $end-color) left repeat);
-}
-
-body, #header-wrapper {
-	background-color: #191C24;
+.main-content{
+  @include span-columns(9);
+  @include shift(3);
 }
 

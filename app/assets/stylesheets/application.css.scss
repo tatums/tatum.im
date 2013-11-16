@@ -12,13 +12,11 @@
  */
 
  @import "bourbon";
- @import "colors";
- @import "albums";
- @import "comments";
+ @import "neat";
+ @import "bitters/bitters";
+ @import "reset";
+ @import "normalize";
  @import "layout";
- @import "photos";
- @import "scaffolds";
- @import "static";
- @import "users";
- @import "bootstrap/bootstrap-responsive";
- @import "bootstrap/bootstrap";
+ @import "style";
+ @import "font-awesome";
+ @import "syntax_highlight";

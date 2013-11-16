@@ -7,4 +7,12 @@ module ApplicationHelper
     end
   end
 
+  def nav_class(path, classes=nil)
+    if current_page?(path)
+      classes + ' current'
+    else
+      classes
+    end
+  end
+
 end

@@ -1,2 +1,17 @@
-- @photos.each do |photo|
-  = image_tag photo.image_url(:large), class: "img-polaroid img-rounded featured"
+.root
+
+  - @photos.each do |photo|
+    = image_tag photo.image_url(:large), class: "img-polaroid img-rounded featured"
+
+%p
+  =link_to 'https://github.com/tatums' do
+    =fa_icon "github-square 2x"
+    github
+
+%p
+  =link_to 'http://tatums.github.io' do 
+    %i.icon-bookmark
+    blog
+
+
+
