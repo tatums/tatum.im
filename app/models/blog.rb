@@ -5,7 +5,8 @@ class Blog
     atom_feed.items.map do |item|
       OpenStruct.new(title: item.title.content,
                      link: item.link.href,
-                     content: item.content.content)
+                     content: item.content.content,
+                     updated_at: item.updated.content)
     end
   end
 

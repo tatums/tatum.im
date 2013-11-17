@@ -1,14 +1,3 @@
-// gray
-$primary1: #302E36;
-$secondary1: #29282E;
-
-// teal
-$primary2: #00BFC2;
-$secondary2: #056874;
-
-// red
-$primary3: #E50909;
-$secondary3: #C20909;
 
 .main-wrapper a {
   color: $primary2;
@@ -24,12 +13,18 @@ $secondary3: #C20909;
 
   border-right: 3px solid $secondary3;
   text-align:right;
-  padding: 1em 1em;
+  padding: 1em;
   position:fixed;
   top:0;
   bottom:0;
+  p a { padding:0.25em;}
+  p i { padding-right: 0.1em;}
 }
-
+.sign-in{
+  position:absolute;
+  bottom: 2em;
+  right: 2em;
+}
 .photo{
   @include border-top-radius(5px);
   @include border-bottom-radius(5px);
@@ -55,10 +50,19 @@ p.brand_subtag {
 }
 
 .main-content{
-  padding-right:1em;
+  padding: 1em;
 }
 
-.highlight pre{
-  margin-top:0;
-  padding-top:0;
+
+.blog{
+  .entry{
+    h2 {
+      margin:0;
+      padding:0;
+    }
+    span.date {
+      color:$secondary2;
+      font-size: .8em;
+    }
+  }
 }

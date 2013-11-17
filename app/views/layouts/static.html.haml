@@ -24,13 +24,16 @@
             =fa_icon "user 2x"
             =current_user.name
       - else
-        = nav_link "Sign-in", login_path
+        = link_to "Sign-in", login_path, class: nav_class(login_path, 'sign-in')
 
     .notifications
       =render :file => 'layouts/shared/notifications'
 
-    .main-content
-      -$items.each do |item|
-        %h2
-          =link_to item.title, item.link
-        =item.content.html_safe
+    .main-content.blog
+      -Blog.new.items.each do |item|
+        .entry
+          %h2
+            =link_to item.title, item.link
+          %span.date
+            =item.updated_at.strftime("%a - %B #{item.updated_at.day.ordinalize}, %Y")
+          =item.content.html_safe
