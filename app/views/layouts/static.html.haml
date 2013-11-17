@@ -30,8 +30,6 @@
       =render :file => 'layouts/shared/notifications'
 
     .main-content
-      /%h1.brand tatum.im
-      /%p.brand_subtag Just another enginer
       -$items.each do |item|
         %h2
           =link_to item.title, item.link
