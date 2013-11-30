@@ -1,0 +1,14 @@
+.entry
+  .entry-heading
+    .date
+      %span.month
+        =item.updated_at.strftime("%b")
+      %span.day
+        =item.updated_at.strftime("#{item.updated_at.day}")
+      %span.year
+        =item.updated_at.strftime("%Y")
+    %h2
+      =link_to item.title, item.link
+
+  .content
+    =item.content.html_safe

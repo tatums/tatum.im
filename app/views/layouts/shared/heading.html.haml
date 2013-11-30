@@ -1,0 +1,21 @@
+=image_tag 'jules_verne3.jpeg', class: 'photo shadow'
+%h1.brand tatum.im
+%p.brand_subtag Just another enginer
+%p.brand_links
+  =link_to 'https://github.com/tatums' do
+    =fa_icon "github-square 2x"
+    github
+  =link_to 'http://tatums.github.io' do
+    =fa_icon "bookmark 2x"
+    blog
+- if current_user
+  %p
+    =link_to albums_path, class: nav_class(albums_path) do
+      =fa_icon "picture-o 2x"
+      Photo Albums
+  %p
+    =link_to user_path(current_user), class: nav_class(user_path(current_user)) do
+      =fa_icon "user 2x"
+      =current_user.name
+- else
+  = link_to "Sign-in", login_path, class: nav_class(login_path, 'sign-in')

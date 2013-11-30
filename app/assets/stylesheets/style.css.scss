@@ -1,3 +1,39 @@
+body{
+  background: image-url("bg.png")
+}
+
+.entry{
+  padding:0 0 2.5em 0;
+ }
+
+.entry-heading{
+  overflow:auto;
+  margin-bottom:1em;
+}
+
+.blog .entry-heading h2{
+  margin:0;
+  padding:0;
+  float:left;
+  font-size:1.6em;
+  margin-left: .5em;
+}
+
+.date{
+  font-size:.8em;
+  float:left;
+  padding:.2em;
+  text-align: center;
+  width:3em;
+  background-color: $primary2;
+  color: $primary1;
+  span{ padding: .1em; }
+  .month, .day, .year{}
+  .day{
+    font-size:1.5em;
+    color:white;
+  }
+}
 
 .main-wrapper a {
   color: $primary2;
@@ -12,20 +48,30 @@
   @include box-shadow(0 0 3px 2px hsla(0, 0%, 0%, 0.35));
 
   border-right: 3px solid $secondary3;
-  text-align:right;
-  padding: 1em;
-  position:fixed;
-  top:0;
-  bottom:0;
+  text-align:right; padding: 1em; position:fixed; top:0;   bottom:0;
+
   p a { padding:0.25em;}
   p i { padding-right: 0.1em;}
+
+  h1.brand{
+    color:white;
+    padding-bottom:0;
+    margin-bottom:0;
+    font-size: 2.4em;
+  }
+  p.brand_subtag {
+    padding:0; margin:0;
+    color:gray;
+    font-size: 0.8em;
+  }
 }
+
 .sign-in{
   position:absolute;
   bottom: 2em;
   right: 2em;
 }
-.photo{
+.photo,.date{
   @include border-top-radius(5px);
   @include border-bottom-radius(5px);
   @include border-left-radius(5px);
@@ -36,33 +82,8 @@
   @include box-shadow(0 0 3px 2px hsla(0, 0%, 0%, 0.35));
 }
 
-h1.brand{
-  color:white;
-  padding-bottom:0;
-  margin-bottom:0;
-}
-
-p.brand_subtag {
-  padding:0;
-  margin:0;
-  color:gray;
-  font-size: 0.8em;
-}
-
 .main-content{
   padding: 1em;
 }
 
 
-.blog{
-  .entry{
-    h2 {
-      margin:0;
-      padding:0;
-    }
-    span.date {
-      color:$secondary2;
-      font-size: .8em;
-    }
-  }
-}
