@@ -18,6 +18,7 @@ gem 'google_plus'
 gem 'jquery-fileupload-rails'
 gem "font-awesome-rails"
 gem 'neat'
+gem 'thin'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
