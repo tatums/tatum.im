@@ -36,6 +36,9 @@ group :development do
   gem 'pry'
   gem 'thin'
   gem 'awesome_print'
+  gem 'capistrano', '~> 3.0.1'
+  gem 'capistrano-rails', '~> 1.1.0'
+  gem 'capistrano-bundler'
 end
 
 group :test, :development do
