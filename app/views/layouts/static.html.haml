@@ -4,6 +4,7 @@
 %body
   .main-wrapper
     .main-heading
+      %h1 TEST
       =render :file => 'layouts/shared/heading'
 
     .notifications
@@ -11,3 +12,4 @@
 
     .main-content.blog
       =render partial: "layouts/entry", collection: Blog.new.items, as: :item
+
