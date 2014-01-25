@@ -12,3 +12,8 @@
     .main-content.blog
       =render partial: "layouts/entry", collection: Blog.new.items, as: :item
 
+      %script{:async => "", :src => "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}
+      / tatum.im
+      %ins.adsbygoogle{"data-ad-client" => "ca-pub-1566068962686971", "data-ad-slot" => "5047202083", :style => "display:inline-block;width:234px;height:60px"}
+      :javascript
+        (adsbygoogle = window.adsbygoogle || []).push({});
