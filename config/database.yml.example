@@ -1,0 +1,12 @@
+defaults: &defaults
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *defaults
+  database: tatum_im_development
+
+test:
+  <<: *defaults
+  database: tatum_im_test
