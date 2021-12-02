@@ -5,7 +5,7 @@ import { getPosts } from '$lib/posts';
 export async function get() {
   const posts = await getPosts()
 
-  console.log('>>> posts', posts.length)
+  //console.log('>>> posts', posts.length)
 
   // const { slug } = params;
   // const __dirname = path.resolve();

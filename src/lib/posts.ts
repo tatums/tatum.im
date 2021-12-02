@@ -14,7 +14,17 @@ for (const path in imports) {
 }
 
 export const getPosts = async () => {
-  return posts
+
+  console.log('post', posts[0])
+
+  return posts.sort((a, b) =>
+    new Date(a.date).getTime() > new Date(b.date).getTime()
+      ? -1
+      : new Date(a.date).getTime() < new Date(b.date).getTime()
+      ? 1
+      : 0
+  )
+
 }
 
 
