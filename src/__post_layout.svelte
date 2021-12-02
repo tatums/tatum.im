@@ -1,6 +1,10 @@
+
 <script context="module">
-   import './app.scss'
+  //import '../app.scss'
+  import './app.scss';
 </script>
+
+
 
 <svelte:head>
   <meta charset="utf-8" />
