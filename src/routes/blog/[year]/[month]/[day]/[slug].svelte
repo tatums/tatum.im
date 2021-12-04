@@ -1,5 +1,7 @@
 <script context="module">
   import '../../../../../app.scss'
+  import Fa from 'svelte-fa'
+  import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
   export const prerender = true;
 
   /** @type {import('@sveltejs/kit').Load} */
@@ -31,9 +33,9 @@
 <article>
   <header>
     <h1>{post.title}</h1>
-		<span class="post-date">{post.date}</span>
+		<span class="post-date">
+      <Fa icon={faCalendarAlt} /> { post.formattedDate }
+    </span>
   </header>
-
-{@html post.html}
+  {@html post.html}
 </article>
-

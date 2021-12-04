@@ -36,9 +36,7 @@
         <a href={post.postPath}>{post.title}</a>
       </h2>
       <span class="post-date">
-
         <Fa icon={faCalendarAlt} />
-
         { post.formattedDate }
       </span>
     </header>
