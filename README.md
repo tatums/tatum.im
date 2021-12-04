@@ -36,3 +36,14 @@ npm run build
 ```
 
 > You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
+
+
+----------------
+## Production
+
+prerendered and 100% static
+
+1. DNS (name.com)
+1. AWS CDN
+1. AWS S3 bucket (origin)
+

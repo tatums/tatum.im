@@ -1,9 +1,9 @@
 <script context="module">
-  import '../../app.scss'
+  import '../../../../../app.scss'
   export const prerender = true;
 
   /** @type {import('@sveltejs/kit').Load} */
-  export async function load({ page, fetch, session, stuff }) {
+  export async function load({ page, fetch }) {
     const url = `/blog/${page.params.slug}.json`;
     const res = await fetch(url);
     const post = await res.json()
@@ -28,8 +28,12 @@
   export let post;
 </script>
 
-
-<h1>{post.title}</h1>
+<article>
+  <header>
+    <h1>{post.title}</h1>
+		<span class="post-date">{post.date}</span>
+  </header>
 
 {@html post.html}
+</article>
 
