@@ -5,7 +5,7 @@ export async function get() {
   //
   // https://github.com/matfantinel/matfantinel.github.io/blob/main/src/routes/posts.json.js
   //
-  const posts = await getPosts()
+  const posts = await getPosts(5)
   return {
     status: 200,
     body: JSON.stringify({ posts: posts })

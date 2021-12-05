@@ -44,13 +44,13 @@ export const getPost = async (slug) => {
   })
 }
 
-export const getPosts = async () => {
-  return posts.sort((a, b) =>
+export const getPosts = async (limit = null) => {
+  const sortedPosts = posts.sort((a, b) =>
     new Date(a.date).getTime() > new Date(b.date).getTime()
       ? -1
       : new Date(a.date).getTime() < new Date(b.date).getTime()
         ? 1
         : 0
   )
-
+  return limit == null ? sortedPosts : sortedPosts.slice(0, limit)
 }

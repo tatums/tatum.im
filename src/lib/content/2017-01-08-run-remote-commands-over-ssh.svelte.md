@@ -6,9 +6,9 @@ comments: true
 categories: admin ssh devops
 ---
 
-Sometimes I find myself needing to run a few command on a remote machine. I'll
-usually ssh into the box and hack away. But, there is an alternative. You can
-run command over SSH!
+Sometimes I find myself needing to run a few command on a remote machine. In the
+past I would have SSH'd into the box and hacked away. But, since this isn't repeatable it's
+not ideal. I have a simple alternative. You can setup a script to run command over SSH!
 
 In the example below, I wanted to keep the configuration files in the git
 repository, but wanted a quick and dirty way to deploy the changes.
