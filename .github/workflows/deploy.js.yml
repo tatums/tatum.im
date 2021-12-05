@@ -28,6 +28,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: echo 'region $AWS_DEFAULT_REGION'
+      - run: |
+          echo "region $AWS_DEFAULT_REGION"
       - run: npm install
       - run: npm run deploy
