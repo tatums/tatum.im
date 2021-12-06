@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'run remote commands over SSH!'
+title: 'Run commands over SSH!'
 date: 2017-01-08 08:19:15 -0600
 comments: true
 categories: admin ssh devops
