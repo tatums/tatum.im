@@ -3,6 +3,7 @@
   export const prerender = true;
   import Fa from 'svelte-fa'
   import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
+  import { fly } from 'svelte/transition';
 
   /** @type {import('@sveltejs/kit').Load} */
   export async function load({ page, fetch, session }) {
@@ -30,7 +31,7 @@
 
 {#each posts as post}
 
-  <article class="blog-post">
+  <article transition:fly={{x:-500, duration: 300}} class="blog-post">
     <header>
       <h2>
         <a href={post.postPath}>{post.title}</a>
