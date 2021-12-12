@@ -28,8 +28,9 @@
   <title>tatum.im</title>
 </svelte:head>
 
-
+<!--
 <button on:click={handleClick}> Click me </button>
+-->
 
 {#each posts as post}
 
