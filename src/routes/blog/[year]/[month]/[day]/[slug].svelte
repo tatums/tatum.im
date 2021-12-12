@@ -2,7 +2,7 @@
   import '../../../../../app.scss'
   import Fa from 'svelte-fa'
   import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
-  import { fly } from 'svelte/transition'
+  import { blur } from 'svelte/transition'
   export const prerender = true;
 
   /** @type {import('@sveltejs/kit').Load} */
@@ -30,7 +30,8 @@
 <script>
   export let post;
 </script>
-<article transition:fly={{duration: 200}}>
+
+<article transition:blur={{duration: 700}}>
   <header>
     <h1>{post.title}</h1>
 		<span class="post-date">

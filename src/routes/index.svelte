@@ -3,12 +3,11 @@
   export const prerender = true;
   import Fa from 'svelte-fa'
   import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
-  import { fly } from 'svelte/transition';
 
   /** @type {import('@sveltejs/kit').Load} */
   export async function load({ page, fetch, session }) {
-    const url = `/index.json`;
-    const res = await fetch(url);
+
+    const res = await fetch('/index.json');
     const data = await res.json()
     if (res.ok) {
       return { props: { posts: data.posts } };
@@ -29,9 +28,12 @@
   <title>tatum.im</title>
 </svelte:head>
 
+
+<button on:click={handleClick}> Click me </button>
+
 {#each posts as post}
 
-  <article transition:fly={{x:-500, duration: 300}} class="blog-post">
+  <article class="blog-post">
     <header>
       <h2>
         <a href={post.postPath}>{post.title}</a>
