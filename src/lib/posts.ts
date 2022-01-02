@@ -44,7 +44,18 @@ export const getPost = async (slug) => {
   })
 }
 
-export const getPosts = async (limit = null) => {
+const postItems = (inputArray = [], perChunk = 5) => {
+  return inputArray.reduce((resultArray, item, index) => {
+    const chunkIndex = Math.floor(index/perChunk)
+    if(!resultArray[chunkIndex]) {
+      resultArray[chunkIndex] = [] // start a new chunk
+    }
+    resultArray[chunkIndex].push(item)
+    return resultArray
+  }, [])
+}
+
+export const getPosts = async (page=1) => {
   const sortedPosts = posts.sort((a, b) =>
     new Date(a.date).getTime() > new Date(b.date).getTime()
       ? -1
@@ -52,5 +63,7 @@ export const getPosts = async (limit = null) => {
         ? 1
         : 0
   )
-  return limit == null ? sortedPosts : sortedPosts.slice(0, limit)
+  const pages = postItems(sortedPosts, 5)
+  const currentPage = pages[page - 1]
+  return currentPage
 }
