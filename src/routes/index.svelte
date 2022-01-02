@@ -5,7 +5,7 @@
   import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
 
   /** @type {import('@sveltejs/kit').Load} */
-  export async function load({ page, fetch, session }) {
+  export async function load({ fetch, session }) {
 
     const res = await fetch('/index.json');
     const data = await res.json()
