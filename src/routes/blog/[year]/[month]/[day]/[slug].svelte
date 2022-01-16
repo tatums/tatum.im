@@ -3,14 +3,13 @@
   import Fa from 'svelte-fa'
   import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
   import { blur } from 'svelte/transition'
-  export const prerender = true;
+  // export const prerender = true;
 
   /** @type {import('@sveltejs/kit').Load} */
-  export async function load({ page, fetch }) {
-    const url = `/blog/${page.params.slug}.json`;
+  export async function load({ params, fetch }) {
+    const url = `/blog/${params.slug}.json`;
     const res = await fetch(url);
     const post = await res.json()
-
 
     if (res.ok) {
       return {
@@ -34,7 +33,7 @@
 <article transition:blur={{duration: 700}}>
   <header>
     <h1>{post.title}</h1>
-		<span class="post-date">
+    <span class="post-date">
       <Fa icon={faCalendarAlt} /> { post.formattedDate }
     </span>
   </header>

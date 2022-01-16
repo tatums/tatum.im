@@ -55,7 +55,7 @@ const postItems = (inputArray = [], perChunk = 5) => {
   }, [])
 }
 
-export const getPosts = async (page=1) => {
+export const getPosts = async (page: number = 1) => {
   const sortedPosts = posts.sort((a, b) =>
     new Date(a.date).getTime() > new Date(b.date).getTime()
       ? -1
@@ -64,6 +64,9 @@ export const getPosts = async (page=1) => {
         : 0
   )
   const pages = postItems(sortedPosts, 5)
-  const currentPage = pages[page - 1]
-  return currentPage
+  return {
+    posts: pages[page - 1],
+    page: page,
+    pagesCount: pages.length
+  }
 }
