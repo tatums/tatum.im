@@ -8,224 +8,222 @@ span,
 ul,
 ol,
 li {
-	-webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1 {
-	color: #005a8e;
-	font-size: 2em;
+  color: #005a8e;
+  font-size: 2em;
 }
 
 h2 {
-	color: #005a8e;
-	font-size: 1.5em;
+  color: #005a8e;
+  font-size: 1.5em;
 }
 
 h3 {
-	color: #005a8e;
-	font-size: 1.1em;
-	font-weight: bold;
-	text-transform: uppercase;
+  color: #005a8e;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 #content {
-	margin-top: 6em;
-	h1 {
-		font-size: 1.95em;
-		font-family: 'Open Sans', sans-serif;
-	}
+  margin-top: 6em;
+  h1 {
+    font-size: 1.95em;
+    font-family: 'Open Sans', sans-serif;
+  }
 }
 
 ol li {
-	margin-left: 2em;
-	padding-left: 0.25em;
-	list-style-type: decimal;
+  margin-left: 2em;
+  padding-left: 0.25em;
+  list-style-type: decimal;
 }
 
 #header h1 {
-	margin-top: 0px;
+  margin-top: 0px;
 }
 
 body {
-	background: #f0f0f0 url(/images/bg-noise.gif) repeat -70% 0;
-	p {
-		font-size: 1.2em;
-		line-height: 1.56em;
-	}
+  background: #f0f0f0 url(/images/bg-noise.gif) repeat -70% 0;
+  p {
+    font-size: 1.2em;
+    line-height: 1.56em;
+  }
 }
 
 hr {
-	border-top: 1px solid #eee;
+  border-top: 1px solid #eee;
 }
 
 nav h1 a {
-	color: #fff;
-	background: linear-gradient(#ff0000, #ff0000) left repeat;
-	padding: 0.15em;
-	border-bottom: 2px solid #9a000046;
-	border-right: 2px solid #8e020246;
+  color: #fff;
+  background: linear-gradient(#ff0000, #ff0000) left repeat;
+  padding: 0.15em;
+  border-bottom: 2px solid #9a000046;
+  border-right: 2px solid #8e020246;
 }
 
 body {
-	background: #f0f0f0 url(/bg-noise.gif) repeat -70% 0;
+  background: #f0f0f0 url(/bg-noise.gif) repeat -70% 0;
 }
 a {
-	color: #005a8e;
-	text-decoration: none;
-	background: 0 0;
-	cursor: pointer;
+  color: #005a8e;
+  text-decoration: none;
+  background: 0 0;
+  cursor: pointer;
 }
 
 nav {
-	width: 100%;
-	height: 50px;
-	position: sticky;
-	top: 0;
-	background-color: #f8f8f8;
-	border-bottom: solid 1px #e7e7e7;
-	z-index: 1;
+  width: 100%;
+  height: 50px;
+  position: sticky;
+  top: 0;
+  background-color: #f8f8f8;
+  border-bottom: solid 1px #e7e7e7;
+  z-index: 1;
 
-	ul {
-		display: flex;
-		margin: 0;
-		padding: 0 100px;
-		justify-content: flex-end;
-	}
+  ul {
+    display: flex;
+    margin: 0;
+    padding: 0 100px;
+    justify-content: flex-end;
+  }
 
-	h1 a {
-		color: #fff;
-		background: linear-gradient(#ff0000, #ff0000) left repeat;
-		padding: 0.15em;
-	}
+  h1 a {
+    color: #fff;
+    background: linear-gradient(#ff0000, #ff0000) left repeat;
+    padding: 0.15em;
+  }
 }
 
 ul, ol {
-	margin: 1em;
+  margin: 1em;
 }
 
 article {
-	overflow: hidden;
-	padding: 1em;
-	padding: 0 1em;
-	background-color: white;
-	background-color: #fff;
-	border-bottom: 1px solid #ddd;
-	border-left: 1px solid #ddd;
-	border-top: 1px solid #fff;
-	position: relative;
-	background-color: white;
+  overflow: hidden;
+  padding: 1em;
+  padding: 0 1em;
+  background-color: white;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-top: 1px solid #fff;
+  position: relative;
+  background-color: white;
 
-	p {
-		margin: 0.5em 0;
-	}
+  p {
+    margin: 0.5em 0;
+  }
 
-	ol li {
-		padding-left: 0.25em;
-		margin: 1em;
-	}
+  ol li {
+    padding-left: 0.25em;
+    margin: 1em;
+  }
 
-	ul li {
-		margin: 1em;
-		padding-left: 0.25em;
-		list-style: disc;
-	}
+  ul li {
+    margin: 1em;
+    padding-left: 0.25em;
+    list-style: disc;
+  }
 
-	header {
+  header {
 
-		h1, h2, h3 {
-			margin: 0.5em 0;
-			font-size: 2em;
-		}
+    h1, h2, h3 {
+      margin: 0.5em 0;
+      font-size: 2em;
+    }
 
-		// grid
-		display: grid;
-		h2 {
-			grid-column: 1/2;
-		}
-		span.post-date {
-			grid-column: 2/2;
-		}
-		// end grid
+    // grid
+    display: grid;
+    h2 {
+      grid-column: 1/2;
+    }
+    span.post-date {
+      grid-column: 2/2;
+    }
+    // end grid
 
-		span.post-date {
-			text-align: right;
-			margin: 1em 0;
-			padding: 0.5em;
-			color: #505050;
-		}
-
-		border-bottom: 1px solid #eee;
-
-	}
+    span.post-date {
+      text-align: right;
+      margin: 1em 0;
+      padding: 0.5em;
+      color: #505050;
+    }
+    border-bottom: 1px solid #eee;
+  }
 }
 .pagination-controls {
-	.button {
-		display: inline-block;
-		border-radius: 4px;
-		background-color: #ff0000;
-		border: none;
-		color: #FFFFFF;
-		text-align: center;
-		font-size: 18px;
-		padding: 10px;
-		min-width: 150px;
-		transition: all 0.5s;
-		cursor: pointer;
-		margin: 5px;
-	}
+  .button {
+    display: inline-block;
+    border-radius: 4px;
+    background: linear-gradient(#ff0000,#ff0000) left repeat;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    min-width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
 
-	.button span {
-		color: #FFFFFF;
-		cursor: pointer;
-		display: inline-block;
-		position: relative;
-		transition: 0.5s;
-	}
+  .button span {
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
 
-	button:disabled,
-	button[disabled]{
-		border: 1px solid #999999;
-		background-color: #cccccc;
-		color: #666666;
-	}
+  button:disabled,
+  button[disabled]{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+  }
 
-	.prev-btn span:before {
-	  content: '\00AB';
-		position: absolute;
-		opacity: 0;
-		top: 0;
-		left: 20px;
-		transition: 0.5s;
-	}
+  .prev-btn span:before {
+    content: '\00AB';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 20px;
+    transition: 0.5s;
+  }
 
-	.next-btn {
-		float: right;
-	}
+  .next-btn {
+    float: right;
+  }
 
-	.next-btn span:after {
-		content: '\00BB';
-		position: absolute;
-		opacity: 0;
-		top: 0;
-		right: -20px;
-		transition: 0.5s;
-	}
+  .next-btn span:after {
+    content: '\00BB';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
 
-	.prev-btn:hover span {
-		padding-left: 25px;
-	}
-	.next-btn:hover span {
-		padding-right: 25px;
-	}
+  .prev-btn:hover span {
+    padding-left: 25px;
+  }
+  .next-btn:hover span {
+    padding-right: 25px;
+  }
 
-	.prev-btn:hover span:before {
-		opacity: 1;
-		left: 0;
-	}
+  .prev-btn:hover span:before {
+    opacity: 1;
+    left: 0;
+  }
 
-	.next-btn:hover span:after {
-		opacity: 1;
-		right: 0;
-	}
+  .next-btn:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
 
 }
