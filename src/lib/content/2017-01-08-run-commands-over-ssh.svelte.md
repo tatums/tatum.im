@@ -6,14 +6,18 @@ comments: true
 categories: admin ssh devops
 ---
 
-Sometimes I find myself needing to run a few command on a remote machine. In the
-past I would have SSH'd into the box and hacked away. But, since this isn't repeatable it's
-not ideal. I have a simple alternative. You can setup a script to run command over SSH!
+Sometimes I need to run a few command on a remote machine. Before, I would have SSH'd into
+the remote machine and started making changes. But, since this isn't repeatable, it's not ideal.
+I have an alternative. You can setup a script, on your local system, and then run the
+script over SSH!
 
-In the example below, I wanted to keep the configuration files in the git
-repository, but wanted a quick and dirty way to deploy the changes.
+Please be aware: There are better ways. Such as Ansible, Terraform, Cloudfront, etc. But
+those are heavier tools than a shell script.
 
-The first half of the script copies files, using `scp`, from the local machine to
+In the example below, I wanted to keep the script, and some configuration files, in version control
+but I also wanted a quick and easy way to deploy the changes.
+
+The first half of the script copies files, using `scp`, from a local machine to
 the remote server.
 
 The second half of the script (starting on line 12) runs commands from the
