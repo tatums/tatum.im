@@ -4,31 +4,20 @@
     - The "symbol *" part is to solve Firefox SVG sprite bug
  */
 *:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
-	all: unset;
-	display: revert;
+  all: unset;
+  display: revert;
 }
 
 /* Preferred box-sizing value */
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-// @font-face {
-// 	font-family: 'Open Sans';
-// 	/*src: url('/fonts/cubano-regular-webfont.woff') format('woff');*/
-// }
-/* Remove list styles (bullets/numbers) */
 ol,
 ul {
-	list-style: none;
-}
-
-* {
-	// font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
-	// font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
-	font-family: 'Open Sans', sans-serif;
+  list-style: none;
 }
 
 html,
@@ -41,21 +30,21 @@ span,
 ul,
 ol,
 li {
-	-webkit-font-smoothing: antialiased;
-	color: rgba(46, 48, 58, 0.96);
+  -webkit-font-smoothing: antialiased;
+  color: rgba(46, 48, 58, 0.96);
 }
 
 /* For images to not be able to exceed their container */
 img {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 /* removes spacing between cells in tables */
 table {
-	border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 /* revert the 'white-space' property for textarea elements on Safari */
 textarea {
-	white-space: revert;
+  white-space: revert;
 }

@@ -41,6 +41,7 @@ This is great for instances where you don't need a full database backed Active R
 You can think of these as higher level abstractions above your ActiveRecord classes. Also, be conscious of the dependancy direction. An ActiveModel model can depend on an ActiveRecord model but your ActiveRecord models shouldn't depend on an ActiveModel model.
 
 <br />
+
 Here's a more involved example.
 Lets say I have 2 ActiveRecord classes `Org` and `User`
 

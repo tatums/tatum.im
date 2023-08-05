@@ -11,18 +11,16 @@ the remote machine and started making changes. But, since this isn't repeatable,
 I have an alternative. You can setup a script, on your local system, and then run the
 script over SSH!
 
-Please be aware: There are better ways. Such as Ansible, Terraform, Cloudfront, etc. But
-those are heavier tools than a shell script.
+**Please be aware:** There are better tools. Such as Ansible, Terraform, CloudFormation, etc. But
+those are heavy tools.
 
-In the example below, I wanted to keep the script, and some configuration files, in version control
+In the example below, I wanted a simple script, and some configuration files, in version control
 but I also wanted a quick and easy way to deploy the changes.
 
 The first half of the script copies files, using `scp`, from a local machine to
-the remote server.
+the remote server. The second half of the script (starting on line 12) runs commands from the
+remote machine. The files are moved to the correct locations and Nginx and Haproxy are restarted.
 
-The second half of the script (starting on line 12) runs commands from the
-remote machine. The files are moved to the correct locations and Nginx and
-Haproxy are restarted.
 
 ```bash
 #!/bin/bash
