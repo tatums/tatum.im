@@ -6,19 +6,20 @@ comments: true
 categories: admin ssh devops
 ---
 
-Sometimes I need to run a few command on a remote machine. Before, I would have SSH'd into
-the remote machine and started making changes. But, since this isn't repeatable, it's not ideal.
-I have an alternative. You can setup a script, on your local system, and then run the
-script over SSH!
+Sometimes I'll need to run a few command on a remote machine. In the past, I would SSH into
+the machine and I would started making changes. But this is not ideal since this isn't repeatable.
+If you've run into this problem, I have an alternative! You can execute a shell script from your
+local system and have it run commands on the remote system using SSH!
 
-**Please be aware:** There are better tools. Such as Ansible, Terraform, CloudFormation, etc. But
+**Please be aware** that there are better tools -- Ansible, Terraform, CloudFormation, etc. But
 those are heavy tools.
 
-In the example below, I wanted a simple script, and some configuration files, in version control
-but I also wanted a quick and easy way to deploy the changes.
+In this example, I have some configuration files that need to be copied to the remote system, and
+then I need to execute a couple commands. I also wanted the script to be checked into version
+control.
 
-The first half of the script copies files, using `scp`, from a local machine to
-the remote server. The second half of the script (starting on line 12) runs commands from the
+The first half of the script copies files, using `scp`, from my local machine to
+the remote machine. The second half of the script (starting on line 12) runs commands from the
 remote machine. The files are moved to the correct locations and Nginx and Haproxy are restarted.
 
 
