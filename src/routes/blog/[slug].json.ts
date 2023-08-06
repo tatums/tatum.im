@@ -1,6 +1,6 @@
 import { getPost } from '$lib/posts';
 
-export async function get({ params }) {
+export async function GET({ params }) {
   const { slug } = params;
 
   const post = await getPost(slug)

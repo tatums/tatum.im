@@ -1,6 +1,6 @@
 import { getPosts } from '$lib/posts';
 
-export async function get({ params }) {
+export async function GET({ params }) {
   const { page } = params
   const n = parseInt(page)
   const data  = await getPosts(n)

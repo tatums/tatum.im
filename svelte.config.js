@@ -10,24 +10,25 @@ import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	extensions: ['.svelte', ...mdsvexConfig.extensions],
-	// Consult https://github.com/sveltejs/svelte-preprocess
-	// for more information about preprocessors
-	preprocess: [preprocess(), mdsvex(mdsvexConfig)],
+  extensions: ['.svelte', ...mdsvexConfig.extensions],
+  // Consult https://github.com/sveltejs/svelte-preprocess
+  // for more information about preprocessors
+  preprocess: [preprocess(), mdsvex(mdsvexConfig)],
 
-	kit: {
-		adapter: adapter(),
+  kit: {
+    adapter: adapter(),
 
-		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte'
-		// prerender: {
-		// 	crawl: true,
-		// 	enabled: true,
-		// 	onError: 'continue',
+    // hydrate the <div id="svelte"> element in src/app.html
+    // target: '#svelte'
+    prerender: {
+      default: true
+    //  crawl: true,
+    //  enabled: true,
+    //  onError: 'continue',
 
-		// 	entries: ['*', '/blog/2017/01/08/run-remote-commands-over-ssh']
-		// }
-	}
+    //  entries: ['*', '/blog/2017/01/08/run-remote-commands-over-ssh']
+    }
+  }
 };
 
 export default config;
