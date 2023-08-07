@@ -1,47 +1,74 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-	$gutterWidth: 0.2em;
-	article, section.pagination-controls {
-		margin: 1em $gutterWidth;
-	}
-	nav {
-		padding-left: $gutterWidth;
-		padding-right: $gutterWidth;
-	}
+  $gutterWidth: 0.2em;
+  article, section.pagination-controls {
+    margin: 1em $gutterWidth;
+  }
+  nav {
+    padding-left: $gutterWidth;
+    padding-right: $gutterWidth;
+  }
+
+  article {
+    header {
+      span.post-date {
+        text-align: left;
+      }
+      margin: 0 0 1.5em 0;
+    }
+  }
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-	$gutterWidth: 0.5em;
-	article, section.pagination-controls {
-		margin: 1em $gutterWidth;
-	}
-	nav {
-		padding-left: $gutterWidth;
-		padding-right: $gutterWidth;
-	}
+  $gutterWidth: 0.5em;
+  article, section.pagination-controls {
+    margin: 1em $gutterWidth;
+  }
+  nav {
+    padding-left: $gutterWidth;
+    padding-right: $gutterWidth;
+  }
+
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-	$gutterWidth: 2em;
-	article, section.pagination-controls {
-		margin: 1em $gutterWidth;
-	}
-	nav {
-		padding-left: $gutterWidth;
-		padding-right: $gutterWidth;
-	}
+  $gutterWidth: 2em;
+  article, section.pagination-controls {
+    margin: 1em $gutterWidth;
+  }
+  nav {
+    padding-left: $gutterWidth;
+    padding-right: $gutterWidth;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-	$gutterWidth: 5em;
-	article, section.pagination-controls {
-		margin: 1em $gutterWidth;
-	}
-	nav {
-		padding-left: $gutterWidth;
-		padding-right: $gutterWidth;
-	}
+  $gutterWidth: 5em;
+  article, section.pagination-controls {
+    margin: 1em $gutterWidth;
+  }
+  nav {
+    padding-left: $gutterWidth;
+    padding-right: $gutterWidth;
+  }
+
+  article {
+    header {
+      // grid
+      display: grid;
+      h2 {
+        grid-column: 1/2;
+      }
+      span.post-date {
+        grid-column: 2/2;
+        text-align: right;
+      }
+      // end grid
+      border-bottom: 1px solid #eee;
+    }
+  }
 }
