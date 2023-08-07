@@ -6,10 +6,10 @@ comments: true
 categories: admin ssh devops
 ---
 
-Sometimes I'll need to run a few command on a remote machine. In the past, I would SSH into
-the machine and I would started making changes. But this is not ideal since this isn't repeatable.
-If you've run into this problem, I have an alternative! You can execute a shell script from your
-local system and have it run commands on the remote system using SSH!
+There are times where I need to run a few command on a server. In the past, I would SSH into
+the server and I would start making changes. But this is not ideal; since this it's not repeatable.
+If you've run into this problem, I have an alternative! You can _run commands over SSH!_ The script
+is executed on your machine but then the commands are run on the remote machine.
 
 **Please be aware** that there are better tools -- Ansible, Terraform, CloudFormation, etc. But
 those are heavy tools.
