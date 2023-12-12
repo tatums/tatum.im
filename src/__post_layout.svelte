@@ -1,10 +1,6 @@
-
 <script context="module">
-  //import '../app.scss'
   import './app.scss';
 </script>
-
-
 
 <svelte:head>
   <meta charset="utf-8" />
@@ -12,6 +8,5 @@
   <meta name="description" content="Random thoughts from a web developer.">
   <title>tatum.im</title>
 </svelte:head>
-
 
 <slot></slot>

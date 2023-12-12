@@ -23,6 +23,7 @@ for (const path in imports) {
   const postPath = `/blog/${year}/${month}/${day}/${cleanedSlug}`
 
   const formattedDate = `${monthName} ${day}, ${year}`
+  const formattedDateShort = `${month}/${day}/${year}`
 
   if (post) {
     posts.push({
@@ -30,6 +31,7 @@ for (const path in imports) {
       slug: cleanedSlug,
       postPath: postPath,
       formattedDate: formattedDate,
+      formattedDateShort: formattedDateShort,
       ...post.default.render()
     });
   }

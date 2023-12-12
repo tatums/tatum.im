@@ -30,7 +30,8 @@
   export let post;
 </script>
 
-<article transition:blur={{duration: 700}}>
+<!-- <article transition:blur={{duration: 700}}> -->
+<article>
   <header>
     <h1>{post.title}</h1>
     <span class="post-date">
