@@ -45,7 +45,7 @@
     <p>
      Hi! My name is <span>Tatum Szymczak</span> and this is my blog.
      I'm a software engineer and I've been doing this since 2000. Work @ <a href="https://scholasticahq.com/">Scholastica</a>. I write code - mostly in ruby.
-      I sometimes, althought not to often, I write about things here.
+      I sometimes, althought not too often, I write about things here.
       I love good cheese, I always root for an under-dog, and I love a good movie.
     </p>
     <p>
