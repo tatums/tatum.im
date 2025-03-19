@@ -1,41 +1,38 @@
-const imports = import.meta.globEager('./content/*.md');
-
-const posts = [];
-for (const path in imports) {
-  const post = imports[path];
-  const cleanedSlug = path.replace('./content/', '').replace('.svelte.md', '').replace(/^\d\d\d\d-\d\d-\d\d-/, '')
-  const date = post.metadata.date
-  const year = new Date(date).toLocaleString('en-US', { year: 'numeric' })
-  const month = new Date(date).toLocaleString('en-US', { month: '2-digit' })
-  const day = new Date(date).toLocaleString('en-US', { day: '2-digit' })
-  const monthName = new Date(date).toLocaleString('en-US', { month: 'long' })
-
-  // console.log(date.toLocaleString('en-US', {
-  //   weekday: 'short', // long, short, narrow
-  //   day: 'numeric', // numeric, 2-digit
-  //   year: 'numeric', // numeric, 2-digit
-  //   month: 'long', // numeric, 2-digit, long, short, narrow
-  //   hour: 'numeric', // numeric, 2-digit
-  //   minute: 'numeric', // numeric, 2-digit
-  //   second: 'numeric', // numeric, 2-digit
-  // }));
-
-  const postPath = `/blog/${year}/${month}/${day}/${cleanedSlug}`
-
-  const formattedDate = `${monthName} ${day}, ${year}`
-  const formattedDateShort = `${month}/${day}/${year}`
-
-  if (post) {
-    posts.push({
-      ...post.metadata,
+let posts: any[] = [];
+const paths = import.meta.glob('/src/posts/*.md', { eager: true });
+for (const path in paths) {
+  const file = paths[path];
+  if (file && typeof file === 'object' && 'metadata' in file) {
+    const metadata = file.metadata as Omit<any, 'slug'>;
+    const cleanedSlug = path.split('/').at(-1)?.replace('.md', '')?.replace(/^\d\d\d\d-\d\d-\d\d-/, '')
+    const date = metadata.date
+    const year = new Date(date).toLocaleString('en-US', { year: 'numeric' })
+    const month = new Date(date).toLocaleString('en-US', { month: '2-digit' })
+    const day = new Date(date).toLocaleString('en-US', { day: '2-digit' })
+    const monthName = new Date(date).toLocaleString('en-US', { month: 'long' })
+    const formattedDate = `${monthName} ${day}, ${year}`
+    const formattedDateShort = `${month}/${day}/${year}`
+    const post = {
+      ...metadata,
       slug: cleanedSlug,
-      postPath: postPath,
-      formattedDate: formattedDate,
-      formattedDateShort: formattedDateShort,
-      ...post.default.render()
-    });
+      year,
+      month,
+      day,
+      monthName,
+      formattedDate,
+      formattedDateShort,
+      html: file.default
+    } satisfies any;
+
+    if (post.date) {
+      posts.push(post);
+    }
   }
 }
+posts = posts.sort(
+  (first, second) => new Date(second.date).getTime() - new Date(first.date).getTime()
+);
+
 
 
 // i.e. slug: 2017-01-08-run-remote-commands-over-ssh'
@@ -72,3 +69,4 @@ export const getPosts = async (page: number = 1) => {
     pagesCount: pages.length
   }
 }
+

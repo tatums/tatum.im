@@ -1,34 +1,19 @@
-// import adapter from '@sveltejs/adapter-auto';
-import adapter from '@sveltejs/adapter-static';
 import { mdsvex } from 'mdsvex';
-import mdsvexConfig from './mdsvex.config.js';
-import preprocess from 'svelte-preprocess';
-
-// const imports = import.meta.glob('./src/lib/content/*.md');
-
-//console.log('imports', imports);
+import adapter from '@sveltejs/adapter-static';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  extensions: ['.svelte', ...mdsvexConfig.extensions],
-  // Consult https://github.com/sveltejs/svelte-preprocess
+  // Consult https://svelte.dev/docs/kit/integrations
   // for more information about preprocessors
-  preprocess: [preprocess(), mdsvex(mdsvexConfig)],
-
+  preprocess: [vitePreprocess(), mdsvex({ extensions: ['.md', '.mdx'] })],
   kit: {
-    adapter: adapter(),
-
-    // hydrate the <div id="svelte"> element in src/app.html
-    // target: '#svelte'
-    prerender: {
-      default: true
-    //  crawl: true,
-    //  enabled: true,
-    //  onError: 'continue',
-
-    //  entries: ['*', '/blog/2017/01/08/run-remote-commands-over-ssh']
-    }
-  }
+    // adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.
+    // If your environment is not supported, or you settled on a specific environment, switch out the adapter.
+    // See https://svelte.dev/docs/kit/adapters for more information about adapters.
+    adapter: adapter()
+  },
+  extensions: ['.svelte', '.svx', '.md', '.mdx']
 };
 
 export default config;

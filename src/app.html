@@ -1,18 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="description" content="notes from a professional developer" />
-    <link rel="icon" href="/favicon.png" />
+    <link rel="icon" href="%sveltekit.assets%/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     %sveltekit.head%
   </head>
-  <body>
+  <body data-sveltekit-preload-data="hover">
     <nav>
       <h1>
         <a href="/">Helping me remember...</a>
       </h1>
     </nav>
-    <div id="svelte">%sveltekit.body%</div>
+    <div style="display: contents">%sveltekit.body%</div>
   </body>
 </html>
