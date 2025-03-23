@@ -14,9 +14,7 @@
   <header>
     <h1>{data.title}</h1>
     <span class="post-date">
-
-      Published at {formatDate(data.date)}
-      <Fa icon={faCalendarAlt} /> {formatDate(data.date)}
+      <Fa icon={faCalendarAlt} /> {data.formattedDate}
     </span>
     <img src={data.image} alt="blog banner" />
   </header>

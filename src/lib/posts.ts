@@ -5,7 +5,8 @@ for (const path in paths) {
   if (file && typeof file === 'object' && 'metadata' in file) {
     const metadata = file.metadata as Omit<any, 'slug'>;
     const cleanedSlug = path.split('/').at(-1)?.replace('.md', '')?.replace(/^\d\d\d\d-\d\d-\d\d-/, '')
-    const date = metadata.date
+
+    const date = metadata.date.replace(' ', 'T').replace(' -', '-').replace(' +', '+');
     const year = new Date(date).toLocaleString('en-US', { year: 'numeric' })
     const month = new Date(date).toLocaleString('en-US', { month: '2-digit' })
     const day = new Date(date).toLocaleString('en-US', { day: '2-digit' })
