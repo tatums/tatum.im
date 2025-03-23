@@ -30,10 +30,11 @@ for (const path in paths) {
     }
   }
 }
-posts = posts.sort(
-  (first, second) => new Date(second.date).getTime() - new Date(first.date).getTime()
-);
-
+posts = posts.sort((a, b) => {
+  const dateA = a.date.replace(' ', 'T').replace(' -', '-').replace(' +', '+');
+  const dateB = b.date.replace(' ', 'T').replace(' -', '-').replace(' +', '+');
+  return new Date(dateB).getTime() - new Date(dateA).getTime();
+});
 
 
 // i.e. slug: 2017-01-08-run-remote-commands-over-ssh'
@@ -56,14 +57,7 @@ const postItems = (inputArray = [], perChunk = 5) => {
 }
 
 export const getPosts = async (page: number = 1) => {
-  const sortedPosts = posts.sort((a, b) =>
-    new Date(a.date).getTime() > new Date(b.date).getTime()
-      ? -1
-      : new Date(a.date).getTime() < new Date(b.date).getTime()
-        ? 1
-        : 0
-  )
-  const pages = postItems(sortedPosts, 5)
+  const pages = postItems(posts, 5)
   return {
     posts: pages[page - 1],
     page: page,
