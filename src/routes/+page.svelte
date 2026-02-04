@@ -17,14 +17,14 @@
       <img src="https://avatars.githubusercontent.com/u/72979?v=4" alt="Tatum Szymczak" />
     </div>
     <p>
-     Hi! My name is <span>Tatum Szymczak</span> and this is my blog.
-     I'm a software engineer and I've been doing this since 2000. Work @ <a href="https://scholasticahq.com/">Scholastica</a>. I write code - mostly in ruby.
-      I sometimes, althought not too often, I write about things here.
-      I love good cheese, I always root for an under-dog, and I love a good movie.
+     Hi! My name is <span>Tatum Szymczak</span>, and this is my blog.
+     I'm a software engineer and I've been doing this since 2000. I work at <a href="https://scholasticahq.com/">Scholastica</a> and write code—mostly in Ruby.
+      Sometimes, although not too often, I write about things here.
+      I love good cheese, always root for the underdog, and enjoy a good movie.
     </p>
     <p>
         If you want to chat, you can find me on
-        <a href="https://github.com/tatums">Github</a> or <a href="https://twitter.com/tatumszymczak">Twitter.</a>
+        <a href="https://github.com/tatums">Github</a> or <a href="https://twitter.com/tatumszymczak">Twitter</a>.
     </p>
     <hr>
   </section>
