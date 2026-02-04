@@ -1,35 +1,9 @@
-<script context="module">
-  import '../app.scss'
-  import Fa from 'svelte-fa'
-  import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
-  export const prerender = true;
-
-  /** @type {import('@sveltejs/kit').Load} */
-  export async function load({ params, fetch }) {
-    const currentPage = params.page || 1
-    const resp = await fetch(`/blog/page/${currentPage}.json`);
-    const data = await resp.json()
-    if (resp.ok) {
-      return {
-        props: {
-          posts: data.posts,
-          currentPage: data.page,
-          pagesCount: data.pagesCount
-        }
-      };
-    }
-    return {
-      status: resp.status,
-      error: new Error(`Could not load`)
-    };
-  }
-</script>
-
 <script>
-  export let posts;
-  export let currentPage;
-  export let pagesCount
-  currentPage = currentPage || 1
+  import Fa from 'svelte-fa';
+  import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+
+  export let data;
+  $: ({ posts, currentPage } = data);
 </script>
 
 <svelte:head>
@@ -40,7 +14,7 @@
 <main class="landing">
   <section class="introduction">
     <div class="me">
-      <img src="https://avatars.githubusercontent.com/u/72979?v=4" />
+      <img src="https://avatars.githubusercontent.com/u/72979?v=4" alt="Tatum Szymczak" />
     </div>
     <p>
      Hi! My name is <span>Tatum Szymczak</span> and this is my blog.
