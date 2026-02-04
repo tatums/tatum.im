@@ -1,6 +1,6 @@
 import { render } from 'svelte/server';
 
-const imports = import.meta.glob('./content/*.md', { eager: true });
+const imports = import.meta.glob('./content/*.svelte.md', { eager: true });
 
 const posts = [];
 for (const path in imports) {
