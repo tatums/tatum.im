@@ -348,18 +348,25 @@ textarea {
 }
 /* ----- Variables ----- */
 
-/* Light mode default, dark mode if recognized as preferred */
+/* Blade Runner cyberpunk theme */
 :root {
-  --background-main: #fefefe;
-  --background-element: #eee;
-  --background-inverted: #282a36;
-  --text-main: #1f1f1f;
-  --text-alt: #333;
-  --text-inverted: #fefefe;
-  --border-element: #282a36;
-  --theme: #005a8e;
-  --theme-light: hsl(0, 25%, 65%);
-  --theme-dark: hsl(0, 25%, 45%);
+  --background-main: #0a0e17;
+  --background-element: #131a2b;
+  --background-card: #0f1521;
+  --background-inverted: #1a1f35;
+  --text-main: #e2e8f0;
+  --text-alt: #94a3b8;
+  --text-muted: #64748b;
+  --text-inverted: #0a0e17;
+  --border-element: #1e293b;
+  --theme: #f97316;
+  --theme-secondary: #ec4899;
+  --theme-tertiary: #22d3ee;
+  --theme-light: #fb923c;
+  --theme-dark: #ea580c;
+  --glow-orange: 0 0 20px rgba(249, 115, 22, 0.3);
+  --glow-pink: 0 0 20px rgba(236, 72, 153, 0.3);
+  --glow-cyan: 0 0 20px rgba(34, 211, 238, 0.3);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -471,7 +478,8 @@ small {
 }
 
 mark {
-  background: pink; /* change to proper color, based on theme */
+  background: linear-gradient(90deg, rgba(236, 72, 153, 0.3), rgba(249, 115, 22, 0.3));
+  color: var(--text-main);
 }
 
 /*
@@ -492,15 +500,18 @@ ins {
 }
 
 blockquote {
-  border-left: 0.3rem solid #7a283a;
-  border-left: 0.3rem solid var(--theme);
-  margin: 0.6rem 0 1.2rem 0;
-  padding-left: 2rem;
+  border-left: 0.3rem solid var(--theme-secondary);
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+  background: linear-gradient(90deg, rgba(236, 72, 153, 0.1), transparent);
+  padding: 1rem 1.5rem;
+  border-radius: 0 8px 8px 0;
 }
 
 blockquote p {
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-style: italic;
+  color: var(--text-alt);
 }
 
 figure {
@@ -552,17 +563,26 @@ figure {
 // }
 
 input {
-  background: #eee;
   background: var(--background-element);
-  padding: 0.5rem 0.65rem;
+  color: var(--text-main);
+  padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
-  border: 2px solid #282a36;
   border: 2px solid var(--border-element);
   font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:focus {
+    outline: none;
+    border-color: var(--theme-tertiary);
+    box-shadow: var(--glow-cyan);
+  }
 }
 
 mark {
-  background: pink; /* change to proper color, based on theme */
-  padding: 0.1em 0.15em;
+  background: linear-gradient(90deg, rgba(236, 72, 153, 0.3), rgba(249, 115, 22, 0.3));
+  padding: 0.1em 0.25em;
+  border-radius: 2px;
+  color: var(--text-main);
 }
 
