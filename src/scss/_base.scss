@@ -348,25 +348,57 @@ textarea {
 }
 /* ----- Variables ----- */
 
-/* Blade Runner cyberpunk theme */
+/* Blade Runner cyberpunk theme - DARK MODE */
 :root {
-  --background-main: #0a0e17;
-  --background-element: #131a2b;
-  --background-card: #0f1521;
-  --background-inverted: #1a1f35;
-  --text-main: #e2e8f0;
-  --text-alt: #94a3b8;
-  --text-muted: #64748b;
-  --text-inverted: #0a0e17;
-  --border-element: #1e293b;
-  --theme: #f97316;
-  --theme-secondary: #ec4899;
-  --theme-tertiary: #22d3ee;
-  --theme-light: #fb923c;
-  --theme-dark: #ea580c;
-  --glow-orange: 0 0 20px rgba(249, 115, 22, 0.3);
-  --glow-pink: 0 0 20px rgba(236, 72, 153, 0.3);
-  --glow-cyan: 0 0 20px rgba(34, 211, 238, 0.3);
+  --background-main: #0d1117;
+  --background-element: #161b22;
+  --background-card: #0d1117;
+  --background-inverted: #1c2128;
+  --text-main: #d0d7de;
+  --text-alt: #8b949e;
+  --text-muted: #6e7681;
+  --text-inverted: #010204;
+  --border-element: #141a24;
+  --theme: #ff6a00;
+  --theme-secondary: #ff2d7a;
+  --theme-tertiary: #00e5ff;
+  --theme-light: #ff8533;
+  --theme-dark: #cc5500;
+  --glow-orange: 0 0 15px rgba(255, 106, 0, 0.4);
+  --glow-pink: 0 0 15px rgba(255, 45, 122, 0.4);
+  --glow-cyan: 0 0 15px rgba(0, 229, 255, 0.4);
+  --glow-orange-subtle: 0 0 8px rgba(255, 106, 0, 0.3);
+  --glow-pink-subtle: 0 0 8px rgba(255, 45, 122, 0.3);
+  --glow-cyan-subtle: 0 0 8px rgba(0, 229, 255, 0.3);
+}
+
+/* Cyberpunk animations */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.8; }
+  94% { opacity: 1; }
+  96% { opacity: 0.9; }
+  97% { opacity: 1; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.2); }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
 }
 
 /* @media (prefers-color-scheme: dark) {
