@@ -41,3 +41,4 @@ def api_host
   Rails.configuration.api_host
 end
 ```
+```
