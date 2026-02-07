@@ -502,6 +502,21 @@ article.blog-post {
     }
   }
 
+  .button.disabled {
+    border: 1px solid var(--border-element);
+    background: transparent;
+    color: $text-muted;
+    box-shadow: none;
+    transform: none;
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
   .prev-btn span:before {
     content: '<< ';
     opacity: 0;

@@ -25,11 +25,15 @@
   </section>
 
   <section class="pagination-controls">
-    <a href="/blog/page/{currentPage == 1 ? currentPage : currentPage - 1}" class="button prev-btn" disabled={currentPage == 1}>
-      <span>Previous</span>
-    </a>
-    <a href="/blog/page/{pagesCount == currentPage ? currentPage : currentPage + 1}" class="button next-btn" disabled={pagesCount == currentPage}>
-      <span>Next</span>
-    </a>
+    {#if pagesCount == currentPage}
+      <span class="button prev-btn disabled"><span>Older</span></span>
+    {:else}
+      <a href="/blog/page/{currentPage + 1}" class="button prev-btn"><span>Older</span></a>
+    {/if}
+    {#if currentPage == 1}
+      <span class="button next-btn disabled"><span>Newer</span></span>
+    {:else}
+      <a href="/blog/page/{currentPage - 1}" class="button next-btn"><span>Newer</span></a>
+    {/if}
   </section>
 </main>
